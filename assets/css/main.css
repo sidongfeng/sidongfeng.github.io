@@ -2174,7 +2174,7 @@ input, select, textarea {
 		}
 
 			ul.alt li {
-				border-top: solid 2px #efefef;
+				border-top: solid 1px #efefef3d;
 				padding: 0.5em 0;
 			}
 
@@ -2646,7 +2646,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer .icons {
-		margin: 1em 0 0 0;
+		margin: -1em 0 0 0;
 	}
 
 		#footer .icons a {
