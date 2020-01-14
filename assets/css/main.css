@@ -2604,7 +2604,7 @@ input, select, textarea {
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 35%;
+		width: 30%;
 	}
 
 		#header > * {
@@ -2620,7 +2620,7 @@ input, select, textarea {
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
 			flex-grow: 1;
-			margin: 0 0 2em 0;
+			margin: -1em 0 2em 0;
 		}
 
 		#header strong, #header b {
@@ -2639,14 +2639,14 @@ input, select, textarea {
 		}
 
 		#header .image.avatar {
-			margin: 0 0 1em 0;
+			margin: -4.5em 0 1em 0;
 			width: 6.25em;
 		}
 
 /* Footer */
 
 	#footer .icons {
-		margin: -1em 0 0 0;
+		margin: -3.2em 0 0 0;
 	}
 
 		#footer .icons a {
@@ -2657,7 +2657,7 @@ input, select, textarea {
 		color: rgba(255, 255, 255, 0.4);
 		font-size: 0.8em;
 		list-style: none;
-		margin: 1em 0 0 0;
+		margin: 0em 0 0 0;
 		padding: 0;
 	}
 
