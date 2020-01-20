@@ -105,6 +105,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	/* background-color: #f7f7f7; */
 }
 
+#wrapper {
+	-webkit-font-smoothing: inherit;
+}
+
 .home {
 	left: 0px;
 	z-index: 0;
@@ -987,6 +991,7 @@ ul.timeline li .data .text {
 .pitems{
 	font-size: 12px;
 	line-height: 18px;
+	-webkit-font-smoothing: inherit;
 }
 
 .pitems .pubtitle {
@@ -1435,4 +1440,8 @@ ul.timeline .date {
 .fac-publications .pitems .pubmain .pubcontents,
 .pitems.no-toggle .pubmain .pubcontents{
 	margin-bottom: 0;
+}
+
+.contact-row {
+	margin-bottom: 20px;
 }
