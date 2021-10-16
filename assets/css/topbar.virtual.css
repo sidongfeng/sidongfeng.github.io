@@ -409,7 +409,8 @@
   display: table-row;
   color: #6c727c;
   font-weight: 500;
-  font-size: 21px;
+  /* font-size: 21px; */
+  font-size: 19px;
   text-decoration: none;
 }
 
