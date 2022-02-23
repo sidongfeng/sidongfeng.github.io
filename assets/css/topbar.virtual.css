@@ -412,6 +412,7 @@
   /* font-size: 21px; */
   font-size: 19px;
   text-decoration: none;
+  height: 90px;
 }
 
 .post-grid .post-title:hover,
