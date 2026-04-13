@@ -1,0 +1,2946 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="description"
+      content="Latest publications from Sidong Feng at CUHK (Shenzhen)."
+    />
+    <meta
+      name="keywords"
+      content="research publication, academic achievements, HCI research updates, SE research updates, paper acceptances"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sidong Feng" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en-US" />
+    <meta name="generator" content="Astro v5.13.5" />
+    <meta name="theme-color" content="#34495E" />
+    <meta name="msapplication-TileColor" content="#34495E" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <title>Publications | Sidong Feng</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://sidongfeng.github.io/news" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//scholar.google.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+    <link rel="dns-prefetch" href="//twitter.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//dblp.org" />
+    <link rel="dns-prefetch" href="//orcid.org" />
+
+    <!-- Page Prefetch -->
+    <link rel="prefetch" href="/index.html" as="document" />
+    <link rel="prefetch" href="/publications.html" as="document" />
+
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-170043246-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-170043246-1");
+    </script>
+
+    <!-- Web Vitals via web-vitals library -->
+    <script>
+      async function loadWebVitals() {
+        const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import(
+          "https://unpkg.com/web-vitals@3/dist/web-vitals.js"
+        );
+
+        function sendToGA(metric) {
+          gtag("event", metric.name, {
+            event_category: "Core Web Vitals",
+            value: Math.round(
+              metric.name === "CLS" ? metric.value * 1000 : metric.value
+            ),
+            metric_id: metric.id,
+            metric_value: metric.value,
+            metric_delta: metric.delta,
+            custom_parameters: {
+              metric_rating: metric.rating,
+            },
+          });
+        }
+
+        getCLS(sendToGA);
+        getFID(sendToGA);
+        getFCP(sendToGA);
+        getLCP(sendToGA);
+        getTTFB(sendToGA);
+      }
+
+      if (document.readyState === "complete") {
+        loadWebVitals();
+      } else {
+        window.addEventListener("load", loadWebVitals);
+      }
+    </script>
+
+    <!-- Academic/Event Analytics -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pageType = document.body?.dataset?.pageType || "unknown";
+        const contentCategory =
+          document.body?.dataset?.contentCategory || "general";
+
+        const trackEvent = (name, params = {}) => {
+          gtag("event", name, params);
+        };
+
+        const addClickTracking = (selector, handler) => {
+          document.querySelectorAll(selector).forEach((el) => {
+            el.addEventListener("click", handler);
+          });
+        };
+
+        addClickTracking("a[data-publication-title]", function () {
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("publication_click", {
+            event_category: "Publications",
+            event_label: publicationTitle,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("a[data-material-type]", function () {
+          const materialType =
+            this.getAttribute("data-material-type") || "unknown";
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("material_click", {
+            event_category: "Publications",
+            event_label: `${materialType} - ${publicationTitle}`,
+            material_type: materialType,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("[data-filter-type]", function () {
+          const filterType = this.getAttribute("data-filter-type") || "unknown";
+          const filterValue =
+            this.getAttribute("data-filter") ||
+            this.getAttribute("data-type") ||
+            "unknown";
+          const filterLabel = this.textContent?.trim() || filterValue;
+
+          trackEvent("filter_click", {
+            event_category: "Publications",
+            event_label: `${filterType}: ${filterLabel}`,
+            filter_type: filterType,
+            filter_keyword: filterValue,
+            page_type: pageType,
+            content_category: contentCategory,
+          });
+        });
+
+        function trackDeepLinkArrival() {
+          if (!window.location.hash) return;
+
+          const hash = window.location.hash.substring(1);
+          const targetElement = document.getElementById(hash);
+
+          if (targetElement && targetElement.classList.contains("paper-card")) {
+            const publicationTitle =
+              targetElement
+                .querySelector("[data-publication-title]")
+                ?.getAttribute("data-publication-title") ||
+              targetElement.querySelector("h3")?.textContent?.trim() ||
+              "Unknown";
+
+            trackEvent("deep_link_arrival", {
+              event_category: "Publications",
+              event_label: publicationTitle,
+              publication_title: publicationTitle,
+              publication_id: hash,
+              page_type: pageType,
+              content_category: contentCategory,
+              non_interaction: true,
+            });
+          }
+        }
+
+        setTimeout(trackDeepLinkArrival, 500);
+        window.addEventListener("hashchange", () => {
+          setTimeout(trackDeepLinkArrival, 100);
+        });
+
+        addClickTracking('a[href*="/files/"], a[href$=".pdf"]', function () {
+          trackEvent("file_download", {
+            event_category: "Publications",
+            event_label: this.href.split("/").pop(),
+            value: 1,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking(
+          'a[href^="http"]:not([href*="sidongfeng.github.io"])',
+          function () {
+            trackEvent("outbound_click", {
+              event_category: "External Links",
+              event_label: this.href,
+              transport: "beacon",
+            });
+          }
+        );
+
+        document
+          .querySelectorAll('a[href^="/"], a[href*="sidongfeng.github.io]')
+          .forEach((link) => {
+            if (link.href.startsWith("http") && !link.href.includes("sidongfeng.github.io")) {
+              return;
+            }
+
+            if (
+              link.hasAttribute("data-publication-title") ||
+              link.hasAttribute("data-material-type")
+            ) {
+              return;
+            }
+
+            link.addEventListener("click", function () {
+              const linkText =
+                this.textContent?.trim() ||
+                this.getAttribute("aria-label") ||
+                "unnamed";
+
+              trackEvent("internal_link_click", {
+                event_category: "Navigation",
+                event_label: `${linkText} → ${this.href}`,
+                link_text: linkText,
+                link_destination: this.href,
+                link_source_page: window.location.pathname,
+                page_type: pageType,
+                transport: "beacon",
+              });
+            });
+          });
+
+        addClickTracking("[data-share]", function () {
+          trackEvent("share", {
+            event_category: "Social",
+            event_label: this.dataset.share,
+            value: 1,
+          });
+        });
+
+        document.querySelectorAll("form").forEach((form) => {
+          form.addEventListener("submit", function () {
+            trackEvent("form_submit", {
+              event_category: "Engagement",
+              event_label: this.id || this.className || "unnamed_form",
+            });
+          });
+        });
+
+        let startTime = Date.now();
+        let engaged = false;
+        let heartbeatTimer;
+        let maxScroll = 0;
+
+        function trackEngagement() {
+          if (engaged) return;
+
+          engaged = true;
+          heartbeatTimer = setInterval(() => {
+            trackEvent("page_engagement", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              non_interaction: true,
+            });
+          }, 30000);
+        }
+
+        window.addEventListener("scroll", () => {
+          trackEngagement();
+
+          const scrollPercent = Math.round(
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+              100
+          );
+
+          if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+            maxScroll = scrollPercent;
+            trackEvent("scroll_depth", {
+              event_category: "Engagement",
+              value: scrollPercent,
+              non_interaction: true,
+            });
+          }
+        });
+
+        window.addEventListener("beforeunload", () => {
+          if (heartbeatTimer) {
+            clearInterval(heartbeatTimer);
+          }
+
+          if (engaged) {
+            trackEvent("session_time", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              transport: "beacon",
+            });
+          }
+        });
+      });
+    </script>
+
+    <!-- Error Tracking -->
+    <script>
+      window.addEventListener("error", (e) => {
+        gtag("event", "javascript_error", {
+          event_category: "Errors",
+          event_label: `${e.message} at ${e.filename}:${e.lineno}`,
+          value: 1,
+          non_interaction: true,
+        });
+      });
+
+      window.addEventListener("unhandledrejection", (e) => {
+        gtag("event", "promise_rejection", {
+          event_category: "Errors",
+          event_label: String(e.reason),
+          value: 1,
+          non_interaction: true,
+        });
+      });
+    </script>
+
+    <!-- Performance Monitor -->
+    <script>
+      class PerformanceMonitor {
+        constructor() {
+          this.metrics = {};
+          this.observers = [];
+          this.webVitals = {
+            lcp: null,
+            fid: null,
+            cls: null,
+            inp: null,
+            ttfb: null,
+            fcp: null,
+          };
+
+          this.init();
+        }
+
+        init() {
+          this.measureCoreWebVitals();
+          this.measureResourceTiming();
+          this.observeLongTasks();
+          this.observeLayoutShifts();
+          this.measurePaintTiming();
+          this.measureMemory();
+
+          window.addEventListener("load", () => {
+            setTimeout(() => this.reportMetrics(), 2000);
+          });
+        }
+
+        measureCoreWebVitals() {
+          this.observeLCP();
+          this.observeFID();
+          this.observeINP();
+          this.measureTTFB();
+        }
+
+        observeLCP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const entries = list.getEntries();
+              const lastEntry = entries[entries.length - 1];
+
+              this.webVitals.lcp = Math.round(
+                lastEntry.renderTime || lastEntry.loadTime
+              );
+              this.metrics.lcp = this.webVitals.lcp;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "LCP",
+                value: this.webVitals.lcp,
+                metric_id: "v3-" + Date.now(),
+                metric_value: this.webVitals.lcp,
+                metric_delta: this.webVitals.lcp,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("LCP", this.webVitals.lcp, {
+                good: 2500,
+                needsImprovement: 4000,
+              });
+            });
+
+            observer.observe({
+              type: "largest-contentful-paint",
+              buffered: true,
+            });
+            this.observers.push(observer);
+          } catch {
+            console.log("LCP observer not supported");
+          }
+        }
+
+        observeFID() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (this.webVitals.fid) continue;
+
+                this.webVitals.fid = Math.round(
+                  entry.processingStart - entry.startTime
+                );
+                this.metrics.fid = this.webVitals.fid;
+
+                gtag("event", "web_vitals", {
+                  event_category: "Web Vitals",
+                  event_label: "FID",
+                  value: this.webVitals.fid,
+                  metric_id: "v3-" + Date.now(),
+                  metric_value: this.webVitals.fid,
+                  metric_delta: this.webVitals.fid,
+                  non_interaction: true,
+                });
+
+                this.logVitalRating("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                });
+              }
+            });
+
+            observer.observe({ type: "first-input", buffered: true });
+            this.observers.push(observer);
+          } catch {
+            console.log("FID observer not supported");
+          }
+        }
+
+        observeINP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let maxDuration = 0;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                const duration = entry.processingEnd
+                  ? entry.processingEnd - entry.startTime
+                  : entry.duration;
+
+                if (duration > maxDuration) {
+                  maxDuration = duration;
+                  this.webVitals.inp = Math.round(duration);
+                  this.metrics.inp = this.webVitals.inp;
+                }
+              }
+            });
+
+            observer.observe({
+              type: "event",
+              buffered: true,
+              durationThreshold: 16,
+            });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  this.webVitals.inp
+                ) {
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "INP",
+                    value: this.webVitals.inp,
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: this.webVitals.inp,
+                    metric_delta: this.webVitals.inp,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("INP", this.webVitals.inp, {
+                    good: 200,
+                    needsImprovement: 500,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("INP observer not supported");
+          }
+        }
+
+        measureTTFB() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const navigationEntries = performance.getEntriesByType("navigation");
+          if (!navigationEntries.length) return;
+
+          const navEntry = navigationEntries[0];
+          this.webVitals.ttfb = Math.round(navEntry.responseStart);
+          this.metrics.ttfb = this.webVitals.ttfb;
+
+          gtag("event", "web_vitals", {
+            event_category: "Web Vitals",
+            event_label: "TTFB",
+            value: this.webVitals.ttfb,
+            metric_id: "v3-" + Date.now(),
+            metric_value: this.webVitals.ttfb,
+            metric_delta: this.webVitals.ttfb,
+            non_interaction: true,
+          });
+
+          this.logVitalRating("TTFB", this.webVitals.ttfb, {
+            good: 800,
+            needsImprovement: 1800,
+          });
+        }
+
+        logVitalRating(name, value, thresholds) {
+          let rating = "good";
+
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          const emoji =
+            rating === "good"
+              ? "✅"
+              : rating === "needs-improvement"
+              ? "⚠️"
+              : "❌";
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.log(`${emoji} ${name}: ${value}ms (${rating})`);
+          }
+
+          return rating;
+        }
+
+        measureResourceTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const resources = performance.getEntriesByType("resource");
+          let totalSize = 0;
+          const slowResources = [];
+
+          resources.forEach((resource) => {
+            totalSize += resource.transferSize || 0;
+
+            if (resource.duration > 1000) {
+              slowResources.push({
+                name: resource.name.split("/").pop(),
+                duration: resource.duration,
+                size: resource.transferSize,
+              });
+            }
+          });
+
+          this.metrics.resourceCount = resources.length;
+          this.metrics.totalResourceSize = totalSize;
+          this.metrics.slowResources = slowResources;
+        }
+
+        observeLongTasks() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const longTasks = list.getEntries();
+              if (!longTasks.length) return;
+
+              this.metrics.longTasks =
+                (this.metrics.longTasks || 0) + longTasks.length;
+
+              longTasks.forEach((task) => {
+                gtag("event", "long_task", {
+                  event_category: "Performance",
+                  value: Math.round(task.duration),
+                  non_interaction: true,
+                  custom_parameters: {
+                    task_duration: task.duration,
+                    task_start: task.startTime,
+                  },
+                });
+              });
+            });
+
+            observer.observe({ entryTypes: ["longtask"] });
+            this.observers.push(observer);
+          } catch {
+            console.log("Long task observer not supported");
+          }
+        }
+
+        observeLayoutShifts() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let clsValue = 0;
+            let reportedToCWV = false;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (!entry.hadRecentInput) {
+                  clsValue += entry.value;
+                }
+              }
+
+              this.webVitals.cls = clsValue;
+              this.metrics.cumulativeLayoutShift = clsValue;
+            });
+
+            observer.observe({ entryTypes: ["layout-shift"] });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  !reportedToCWV &&
+                  clsValue > 0
+                ) {
+                  reportedToCWV = true;
+
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "CLS",
+                    value: Math.round(clsValue * 1000),
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: clsValue,
+                    metric_delta: clsValue,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("CLS", clsValue, {
+                    good: 0.1,
+                    needsImprovement: 0.25,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("Layout shift observer not supported");
+          }
+        }
+
+        measurePaintTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const paintEntries = performance.getEntriesByType("paint");
+
+          paintEntries.forEach((entry) => {
+            const value = Math.round(entry.startTime);
+            this.metrics[entry.name.replace("-", "_")] = value;
+
+            if (entry.name === "first-contentful-paint") {
+              this.webVitals.fcp = value;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "FCP",
+                value,
+                metric_id: "v3-" + Date.now(),
+                metric_value: value,
+                metric_delta: value,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("FCP", value, {
+                good: 1800,
+                needsImprovement: 3000,
+              });
+            }
+          });
+        }
+
+        measureMemory() {
+          if (!("memory" in performance)) return;
+
+          this.metrics.memoryUsage = {
+            used: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024),
+            total: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024),
+            limit: Math.round(performance.memory.jsHeapSizeLimit / 1024 / 1024),
+          };
+        }
+
+        reportMetrics() {
+          if ("performance" in window && performance.timing) {
+            const timing = performance.timing;
+            this.metrics.pageLoadTime =
+              timing.loadEventEnd - timing.navigationStart;
+            this.metrics.domReadyTime =
+              timing.domContentLoadedEventEnd - timing.navigationStart;
+          }
+
+          gtag("event", "performance_metrics", {
+            event_category: "Performance",
+            custom_parameters: {
+              page_load_time: this.metrics.pageLoadTime,
+              dom_ready_time: this.metrics.domReadyTime,
+              resource_count: this.metrics.resourceCount,
+              total_size: Math.round(
+                (this.metrics.totalResourceSize || 0) / 1024
+              ),
+              long_tasks: this.metrics.longTasks || 0,
+              first_paint: this.metrics.first_paint,
+              first_contentful_paint: this.metrics.first_contentful_paint,
+              memory_used: this.metrics.memoryUsage?.used,
+            },
+            non_interaction: true,
+          });
+
+          this.checkPerformanceBudget();
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.group("🚀 Performance Metrics");
+
+            console.group("📊 Core Web Vitals");
+            console.table({
+              "LCP (Largest Contentful Paint)": {
+                value: this.webVitals.lcp
+                  ? `${this.webVitals.lcp}ms`
+                  : "Not measured",
+                target: "< 2500ms (good), < 4000ms (needs improvement)",
+                status: this.getRatingEmoji("LCP", this.webVitals.lcp, {
+                  good: 2500,
+                  needsImprovement: 4000,
+                }),
+              },
+              "FID (First Input Delay)": {
+                value: this.webVitals.fid
+                  ? `${this.webVitals.fid}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 100ms (good), < 300ms (needs improvement)",
+                status: this.getRatingEmoji("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                }),
+              },
+              "CLS (Cumulative Layout Shift)": {
+                value:
+                  this.webVitals.cls !== null
+                    ? this.webVitals.cls.toFixed(3)
+                    : "Not measured",
+                target: "< 0.1 (good), < 0.25 (needs improvement)",
+                status: this.getRatingEmoji("CLS", this.webVitals.cls, {
+                  good: 0.1,
+                  needsImprovement: 0.25,
+                }),
+              },
+              "INP (Interaction to Next Paint)": {
+                value: this.webVitals.inp
+                  ? `${this.webVitals.inp}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 200ms (good), < 500ms (needs improvement)",
+                status: this.getRatingEmoji("INP", this.webVitals.inp, {
+                  good: 200,
+                  needsImprovement: 500,
+                }),
+              },
+              "FCP (First Contentful Paint)": {
+                value: this.webVitals.fcp
+                  ? `${this.webVitals.fcp}ms`
+                  : "Not measured",
+                target: "< 1800ms (good), < 3000ms (needs improvement)",
+                status: this.getRatingEmoji("FCP", this.webVitals.fcp, {
+                  good: 1800,
+                  needsImprovement: 3000,
+                }),
+              },
+              "TTFB (Time to First Byte)": {
+                value: this.webVitals.ttfb
+                  ? `${this.webVitals.ttfb}ms`
+                  : "Not measured",
+                target: "< 800ms (good), < 1800ms (needs improvement)",
+                status: this.getRatingEmoji("TTFB", this.webVitals.ttfb, {
+                  good: 800,
+                  needsImprovement: 1800,
+                }),
+              },
+            });
+            console.groupEnd();
+
+            console.group("⚙️ Other Metrics");
+            console.table(this.metrics);
+            console.groupEnd();
+
+            console.groupEnd();
+          }
+        }
+
+        getRatingEmoji(name, value, thresholds) {
+          if (value === null || value === undefined) return "⏳";
+
+          let rating = "good";
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          return rating === "good"
+            ? "✅ Good"
+            : rating === "needs-improvement"
+            ? "⚠️ Needs improvement"
+            : "❌ Poor";
+        }
+
+        checkPerformanceBudget() {
+          const budgets = {
+            lcp: 2500,
+            fcp: 1800,
+            cls: 0.1,
+            fid: 100,
+            inp: 200,
+            ttfb: 800,
+            pageLoadTime: 3000,
+            domReadyTime: 1500,
+            totalResourceSize: 2097152,
+            longTasks: 3,
+            first_contentful_paint: 1800,
+          };
+
+          const violations = [];
+          const warnings = [];
+
+          Object.entries(this.webVitals).forEach(([metric, value]) => {
+            if (
+              value !== null &&
+              value !== undefined &&
+              Object.prototype.hasOwnProperty.call(budgets, metric) &&
+              value > budgets[metric]
+            ) {
+              violations.push({
+                metric: metric.toUpperCase(),
+                value: metric === "cls" ? value.toFixed(3) : `${value}ms`,
+                budget:
+                  metric === "cls"
+                    ? budgets[metric].toFixed(3)
+                    : `${budgets[metric]}ms`,
+                type: "Core Web Vital",
+              });
+            }
+          });
+
+          Object.entries(budgets).forEach(([metric, budget]) => {
+            if (Object.prototype.hasOwnProperty.call(this.webVitals, metric)) {
+              return;
+            }
+
+            const value = this.metrics[metric];
+            if (value && value > budget) {
+              warnings.push({
+                metric,
+                value,
+                budget,
+                type: "Performance",
+              });
+            }
+          });
+
+          if (violations.length > 0) {
+            gtag("event", "core_web_vitals_violation", {
+              event_category: "Performance",
+              event_label: violations.map((v) => v.metric).join(","),
+              value: violations.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Core Web Vitals budget violations:");
+              console.table(violations);
+            }
+          }
+
+          if (warnings.length > 0) {
+            gtag("event", "performance_budget_violation", {
+              event_category: "Performance",
+              event_label: warnings.map((v) => v.metric).join(","),
+              value: warnings.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Performance budget warnings:");
+              console.table(warnings);
+            }
+          }
+
+          return { violations, warnings };
+        }
+
+        cleanup() {
+          this.observers.forEach((observer) => observer.disconnect());
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        window.performanceMonitor = new PerformanceMonitor();
+      });
+
+      window.addEventListener("beforeunload", () => {
+        if (window.performanceMonitor) {
+          window.performanceMonitor.cleanup();
+        }
+      });
+    </script>
+  </head>
+  
+  <body
+  class="bg-white text-gray-900"
+  data-page-type="publications"
+  data-content-category="website"
+>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <a
+              href="index.html"
+              class="text-xl font-bold logo-link"
+              style="color: var(--color-primary);"
+            >
+              Sidong Feng
+            </a>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="index.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Home
+              </a>
+              <a
+                href="news.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                News
+              </a>
+              <a
+                href="publications.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-active"
+              >
+                Publications
+              </a>
+              <a
+                href="students.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Students
+              </a>
+              <a
+                href="join.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Join Us
+              </a>
+              <!-- <a
+                href="media.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Media
+              </a> -->
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="mobile-menu-btn p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewbox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
+        >
+          <a href="index.html" class="block px-3 py-2 text-base font-medium nav-link">
+            Home
+          </a>
+          <a
+            href="news.html"
+            class="block px-3 py-2 text-base font-medium nav-link"
+          >
+            News
+          </a>
+          <a
+            href="publications.html"
+            class="block px-3 py-2 text-base font-medium nav-active"
+          >
+            Publications
+          </a>
+          <a
+            href="students.html"
+            class="block px-3 py-2 text-base font-medium nav-link"
+          >
+            Students
+          </a>
+          <a href="join.html" class="block px-3 py-2 text-base font-medium nav-link">
+            Join Us
+          </a>
+          <!-- <a href="media.html" class="block px-3 py-2 text-base font-medium nav-link">
+            Media
+          </a> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-1" id="main-content">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav
+          aria-label="Breadcrumb"
+          class="breadcrumb-nav"
+          data-astro-cid-qaanghzh
+        >
+          <ol class="breadcrumb" data-astro-cid-qaanghzh>
+            <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+              <a
+                href="index.html"
+                class="breadcrumb-link"
+                data-astro-cid-qaanghzh
+              >
+                Home
+              </a>
+              <span
+                class="breadcrumb-separator"
+                aria-hidden="true"
+                data-astro-cid-qaanghzh
+              >
+                /
+              </span>
+            </li>
+            <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+              <span
+                class="breadcrumb-current"
+                aria-current="page"
+                data-astro-cid-qaanghzh
+              >
+                Publications
+              </span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 pt-4 pb-8 sm:px-6 lg:px-8">
+        <div class="page-header">
+          <h1 class="page-title mb-2">Publications</h1>
+
+          <!-- Contextual link to KIXLAB -->
+          <!-- <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <p class="text-blue-900">
+              <strong>Lab Publications:</strong>
+              For complete lab publications, project demos, and ongoing research,
+              visit
+              <a
+                href="https://kixlab.org/publications/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link hover:text-link-hover font-medium underline"
+              >
+                KIXLAB Publications
+              </a>.
+            </p>
+          </div> -->
+
+          <!-- Paper Filters -->
+          <div class="filters-section space-y-4 mb-6">
+            <!-- Active Filters Indicator -->
+            <div
+              id="active-filters-indicator"
+              class="active-filters-indicator hidden"
+            >
+              <span class="active-filters-label">
+                <span class="active-filters-dot"></span>
+                Active filters:
+              </span>
+              <span id="active-filters-text" class="active-filters-text"></span>
+              <button
+                id="clear-filters-btn"
+                class="clear-filters-btn"
+                data-filter-type="clear"
+                data-filter="all"
+                aria-label="Clear all filters"
+              >
+                Clear all
+              </button>
+            </div>
+
+            <!-- Results Count -->
+            <div id="results-count" class="text-sm text-text-light mb-2">
+              <span id="results-count-text"></span>
+            </div>
+
+            <!-- Paper Type Filter -->
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-sm font-medium text-text">Filter by type:</span>
+
+              <button
+                class="type-filter-btn btn-filter px-3 py-1 text-sm rounded-full"
+                data-type="all"
+                data-filter-type="type"
+                aria-label="Show all publication types"
+                aria-pressed="true"
+                role="button"
+              >
+                All Types
+              </button>
+
+              <button
+                class="type-filter-btn btn-filter px-3 py-1 text-sm rounded-full"
+                data-type="awarded"
+                data-filter-type="type"
+                aria-label="Filter by awarded papers"
+                aria-pressed="false"
+                role="button"
+              >
+                &#127942; Awarded / Highlighted Papers
+              </button>
+
+              <!-- <button
+                class="type-filter-btn btn-filter px-3 py-1 text-sm rounded-full"
+                data-type="full"
+                data-filter-type="type"
+                aria-label="Filter by full papers"
+                aria-pressed="false"
+                role="button"
+              >
+                &#128196; Full Papers
+              </button>
+
+              <button
+                class="type-filter-btn btn-filter px-3 py-1 text-sm rounded-full"
+                data-type="wip"
+                data-filter-type="type"
+                aria-label="Filter by WIP and posters"
+                aria-pressed="false"
+                role="button"
+              >
+                &#128221; WIP/Posters
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+        <section class="section-spacing">
+          <h2 class="section-header">Conference &amp; Journal Papers</h2>
+
+          <div class="year-section my-8">
+            <h3 class="sr-only">2026 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2026"
+              aria-label="Toggle 2026 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2026
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2026">
+              
+
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2026-vibr-automated-bug-replay-from-video-based-reports-using-vision-language-models"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Dingbang Wang</span>, <span>Nikola Tomic</span>,
+                    <span>Tingting Yu</span>, <span>Aldeida Aleti</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">FSE 2026</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models"
+                      data-publication-id="feng-2026-vibr-automated-bug-replay-from-video-based-reports-using-vision-language-models"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2026-international-workshop-on-user-interface-and-experience-for-software-engineering-uise-2026"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    International Workshop on User Interface and Experience for Software Engineering (UISE 2026)
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Kevin Moran</span>, <span>Tingting Yu</span>,
+                    <span>Sam Malek</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">ICSE 2026 Workshop</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://conf.researchr.org/home/icse-2026/uise-2026"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="website"
+                      data-publication-title="International Workshop on User Interface and Experience for Software Engineering (UISE 2026)"
+                      data-publication-id="feng-2026-international-workshop-on-user-interface-and-experience-for-software-engineering-uise-2026"
+                    >
+                      &#127760;
+                      <span class="ml-1">call for paper</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2026-breaking-single-tester-limits-multi-agent-llms-for-multi-user-feature-testing"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Changhao Du</span>, <span>Huaxiao Liu</span>,
+                    <span>Qingnan Wang</span>, <span>Zhengwei Lv</span>,
+                    <span>Mengfei Wang</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">ICSE 2026</span>
+              
+                    <!-- Award / Highlight -->
+                    <span class="award-badge text-xs">Acceptance rate: 9.2% (60/646)</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/abs/2506.17539"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="arxiv"
+                      data-publication-title="Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing"
+                      data-publication-id="feng-2026-breaking-single-tester-limits-multi-agent-llms-for-multi-user-feature-testing"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Blog Posts">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-blog-how-smart-is-your-gui-agent-a-framework-for-the-future-of-software-interaction"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    How Smart Is Your GUI Agent? A Framework for the Future of Software Interaction
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">Blog</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/pdf/2602.11514"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="blog"
+                      data-publication-title="How Smart Is Your GUI Agent? A Framework for the Future of Software Interaction"
+                      data-publication-id="feng-blog-how-smart-is-your-gui-agent-a-framework-for-the-future-of-software-interaction"
+                    >
+                      &#128221;
+                      <span class="ml-1">Blog</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="year-section my-8">
+            <h3 class="sr-only">2025 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2025"
+              aria-label="Toggle 2025 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2025
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2025">
+
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="yuan-2025-towards-human-ai-synergy-in-ui-design-supporting-iterative-generation-with-llms"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Towards Human-AI Synergy in UI Design: Supporting Iterative Generation with LLMs
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Mingyue Yuan</span>, <span>Jieshan Chen</span>,
+                    <span>Yongquan Hu</span>, <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Mulong Xie</span>, <span>Gelareh Mohammadi</span>,
+                    <span>Zhenchang Xing</span>, <span>Aaron Quigley</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">TOCHI 2025</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/abs/2412.20071"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="arxiv"
+                      data-publication-title="Towards Human-AI Synergy in UI Design: Supporting Iterative Generation with LLMs"
+                      data-publication-id="yuan-2025-towards-human-ai-synergy-in-ui-design-supporting-iterative-generation-with-llms"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2025-agent-for-user-testing-multi-user-interactive-features-in-tiktok"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Agent for User: Testing Multi-User Interactive Features in TikTok
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Changhao Du</span>, <span>Huaxiao Liu</span>,
+                    <span>Qingnan Wang</span>, <span>Zhengwei Lv</span>,
+                    <span>Gang Huo</span>, <span>Xu Yang</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">ICSE 2025 Industry</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/abs/2504.15474"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="arxiv"
+                      data-publication-title="Agent for User: Testing Multi-User Interactive Features in TikTok"
+                      data-publication-id="feng-2025-agent-for-user-testing-multi-user-interactive-features-in-tiktok"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="wang-2025-an-empirical-study-on-leveraging-images-in-automated-bug-report-reproduction"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    An Empirical Study on Leveraging Images in Automated Bug Report Reproduction
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Dingbang Wang</span>, <span>Zhaoxu Zhang</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>William G.J. Halfond</span>, <span>Tingting Yu</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials, and Keywords in single row -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">MSR 2025</span>
+
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/abs/2502.15099"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="arxiv"
+                      data-publication-title="An Empirical Study on Leveraging Images in Automated Bug Report Reproduction"
+                      data-publication-id="wang-2025-an-empirical-study-on-leveraging-images-in-automated-bug-report-reproduction"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+            
+          </div>
+
+          <!-- 2024 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2024 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2024"
+              aria-label="Toggle 2024 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2024
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2024">
+
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2024-enabling-cost-effective-ui-automation-testing-with-retrieval-based-llms-a-case-study-in-wechat"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Haochuan Lu</span>, <span>Jianqin Jiang</span>,
+                    <span>Ting Xiong</span>, <span>Likun Huang</span>,
+                    <span>Yinglin Liang</span>, <span>Xiaoqin Li</span>,
+                    <span>Yuetang Deng</span>, <span>Aldeida Aleti</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ASE 2024 Industry</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2409.07829"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat"
+                      data-publication-id="feng-2024-enabling-cost-effective-ui-automation-testing-with-retrieval-based-llms-a-case-study-in-wechat"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="wang-2024-feedback-driven-automated-whole-bug-report-reproduction-for-android-apps"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Dingbang Wang</span>, <span>Yu Zhao</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Zhaoxu Zhang</span>, <span>William GJ Halfond</span>,
+                    <span>Chunyang Chen</span>, <span>Xiaoxia Sun</span>,
+                    <span>Jiangfan Shi</span>, <span>Tingting Yu</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ISSTA 2024</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2407.05165"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps"
+                      data-publication-id="wang-2024-feedback-driven-automated-whole-bug-report-reproduction-for-android-apps"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2024-mud-towards-a-large-scale-and-noise-filtered-ui-dataset-for-modern-style-ui-modeling"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Suyu Ma</span>, <span>Han Wang</span>,
+                    <span>David Kong</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">CHI 2024</span>
+              
+                    <a
+                      href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling"
+                      data-publication-id="feng-2024-mud-towards-a-large-scale-and-noise-filtered-ui-dataset-for-modern-style-ui-modeling"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/sidongfeng/MUD"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="dataset"
+                      data-publication-title="MUD Dataset"
+                      data-publication-id="feng-2024-mud-dataset"
+                    >
+                      &#128187;
+                      <span class="ml-1">dataset</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2024-designing-with-language-wireframing-ui-design-intent-with-generative-large-language-models"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Designing with Language: Wireframing UI Design Intent with Generative Large Language Models
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Mingyue Yuan</span>, <span>Jieshan Chen</span>,
+                    <span>Zhenchang Xing</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">CHI 2024 Workshop</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2312.07755.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Designing with Language: Wireframing UI Design Intent with Generative Large Language Models"
+                      data-publication-id="feng-2024-designing-with-language-wireframing-ui-design-intent-with-generative-large-language-models"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2024-prompting-is-all-you-need-automated-android-bug-replay-with-large-language-models"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Prompting Is All You Need: Automated Android Bug Replay with Large Language Models
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE 2024</span>
+              
+                    <span class="award-badge text-xs">Acceptance rate: 6.6%</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2306.01987.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Prompting Is All You Need: Automated Android Bug Replay with Large Language Models"
+                      data-publication-id="feng-2024-prompting-is-all-you-need-automated-android-bug-replay-with-large-language-models"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2023 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2023"
+              aria-label="Toggle 2023 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2023
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2023">
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2023-towards-efficient-record-and-replay-a-case-study-in-wechat"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Towards Efficient Record and Replay: A Case Study in WeChat
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Haochuan Lu</span>, <span>Ting Xiong</span>,
+                    <span>Yuetang Deng</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ESEC/FSE 2023 Industry</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2308.06657.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Towards Efficient Record and Replay: A Case Study in WeChat"
+                      data-publication-id="feng-2023-towards-efficient-record-and-replay-a-case-study-in-wechat"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2023-video2action-reducing-human-interactions-in-action-annotation-of-app-tutorial-videos"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Video2Action: Reducing Human Interactions in Action Annotation of App Tutorial Videos
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>, <span>Zhenchang Xing</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">UIST 2023</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2308.03252.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Video2Action: Reducing Human Interactions in Action Annotation of App Tutorial Videos"
+                      data-publication-id="feng-2023-video2action-reducing-human-interactions-in-action-annotation-of-app-tutorial-videos"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="chen-2023-unveiling-the-tricks-automated-detection-of-dark-pattern-in-mobile-applications"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Unveiling the tricks: Automated Detection of Dark Pattern in Mobile Applications
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span>Jieshan Chen</span>, <span>Jiamou Sun</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Zhenchang Xing</span>, <span>Qinghua Lu</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">UIST 2023</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2308.05898.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Unveiling the tricks: Automated Detection of Dark Pattern in Mobile Applications"
+                      data-publication-id="chen-2023-unveiling-the-tricks-automated-detection-of-dark-pattern-in-mobile-applications"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2023-efficiency-matters-speeding-up-automated-testing-with-gui-rendering-inference"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Efficiency Matters: Speeding Up Automated Testing with GUI Rendering Inference
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Mulong Xie</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE 2023</span>
+              
+                    <span class="award-badge text-xs">
+                      &#127942; ACM SIGSOFT Distinguished Paper Award
+                    </span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2212.05203.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Efficiency Matters: Speeding Up Automated Testing with GUI Rendering Inference"
+                      data-publication-id="feng-2023-efficiency-matters-speeding-up-automated-testing-with-gui-rendering-inference"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/sidongfeng/AdaT"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="AdaT Code"
+                      data-publication-id="feng-2023-adat-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2023-read-it-dont-watch-it-captioning-bug-recordings-automatically"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Read It, Don't Watch It: Captioning Bug Recordings Automatically
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Mulong Xie</span>, <span>Yinxing Xue</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE 2023</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2302.00886.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Read It, Don't Watch It: Captioning Bug Recordings Automatically"
+                      data-publication-id="feng-2023-read-it-dont-watch-it-captioning-bug-recordings-automatically"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/sidongfeng/CAPdroid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="CAPdroid Code"
+                      data-publication-id="feng-2023-capdroid-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2022 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2022"
+              aria-label="Toggle 2022 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2022
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2022">
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="xie-2022-psychologically-inspired-unsupervised-inference-of-perceptual-groups-of-gui-widgets-from-gui-images"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Psychologically-Inspired, Unsupervised Inference of Perceptual Groups of GUI Widgets from GUI Images
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span>Mulong Xie</span>, <span>Zhenchang Xing</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>, <span>Liming Zhu</span>,
+                    <span>Xiwei Xu</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ESEC/FSE 2022</span>
+              
+                    <a
+                      href="https://arxiv.org/pdf/2206.10352.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Psychologically-Inspired, Unsupervised Inference of Perceptual Groups of GUI Widgets from GUI Images"
+                      data-publication-id="xie-2022-psychologically-inspired-unsupervised-inference-of-perceptual-groups-of-gui-widgets-from-gui-images"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/MulongXie/GUI-Perceptual-Grouping"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="GUI Perceptual Grouping Code"
+                      data-publication-id="xie-2022-gui-perceptual-grouping-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2022-gifdroid-automated-replay-of-visual-bug-reports-for-android-apps"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    GIFdroid: Automated Replay of Visual Bug Reports for Android Apps
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE 2022</span>
+              
+                    <a
+                      href="https://arxiv.org/abs/2112.04128"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="GIFdroid: Automated Replay of Visual Bug Reports for Android Apps"
+                      data-publication-id="feng-2022-gifdroid-automated-replay-of-visual-bug-reports-for-android-apps"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/gifdroid/gifdroid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="GIFdroid Code"
+                      data-publication-id="feng-2022-gifdroid-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+              
+                    <a
+                      href="https://youtu.be/G0Zytwpsabk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="video"
+                      data-publication-title="GIFdroid Video"
+                      data-publication-id="feng-2022-gifdroid-video"
+                    >
+                      &#127909;
+                      <span class="ml-1">video</span>
+                    </a>
+              
+                    <a
+                      href="https://youtu.be/3n4Ym0K_mHc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="presentation"
+                      data-publication-title="GIFdroid Presentation"
+                      data-publication-id="feng-2022-gifdroid-presentation"
+                    >
+                      &#128250;
+                      <span class="ml-1">presentation</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2022-gifdroid-an-automated-light-weight-tool-for-replaying-visual-bug-reports"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    GIFdroid: An Automated Light-weight Tool for Replaying Visual Bug Reports
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE-C 2022</span>
+              
+                    <a
+                      href="./papers/Gifdroid_tool.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="GIFdroid: An Automated Light-weight Tool for Replaying Visual Bug Reports"
+                      data-publication-id="feng-2022-gifdroid-tool"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/gifdroid/gifdroid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="GIFdroid Code"
+                      data-publication-id="feng-2022-gifdroid-code-2"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+              
+                    <a
+                      href="https://youtu.be/G0Zytwpsabk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="video"
+                      data-publication-title="GIFdroid Video"
+                      data-publication-id="feng-2022-gifdroid-video-2"
+                    >
+                      &#127909;
+                      <span class="ml-1">video</span>
+                    </a>
+              
+                    <a
+                      href="https://youtu.be/3n4Ym0K_mHc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="presentation"
+                      data-publication-title="GIFdroid Presentation"
+                      data-publication-id="feng-2022-gifdroid-presentation-2"
+                    >
+                      &#128250;
+                      <span class="ml-1">presentation</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2022-gallery-dc-auto-created-gui-component-gallery-for-design-search-and-knowledge-discovery"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Gallery D.C.: Auto-created GUI Component Gallery for Design Search and Knowledge Discovery
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Chunyang Chen</span>, <span>Zhenchang Xing</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">ICSE-C 2022</span>
+              
+                    <a
+                      href="https://arxiv.org/abs/2204.06700"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Gallery D.C.: Auto-created GUI Component Gallery for Design Search and Knowledge Discovery"
+                      data-publication-id="feng-2022-gallery-dc"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="http://mui-collection.herokuapp.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="tool"
+                      data-publication-title="Gallery DC Tool"
+                      data-publication-id="feng-2022-gallery-dc-tool"
+                    >
+                      &#128295;
+                      <span class="ml-1">Tool</span>
+                    </a>
+              
+                    <a
+                      href="https://youtu.be/zVmsz_wY5OQ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="video"
+                      data-publication-title="Gallery DC Video"
+                      data-publication-id="feng-2022-gallery-dc-video"
+                    >
+                      &#127909;
+                      <span class="ml-1">video</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2022-auto-icon-plus-an-automated-end-to-end-code-generation-tool-for-icon-designs-in-ui-development"
+                >
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Auto-Icon+: An Automated End-to-End Code Generation Tool for Icon Designs in UI Development
+                  </h3>
+              
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Minmin Jiang</span>, <span>TingTing Zhou</span>,
+                    <span>Yankun Zhen</span>, <span>Chunyang Chen</span>
+                  </p>
+              
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <span class="font-medium text-text-light">TIIS 2022</span>
+              
+                    <a
+                      href="https://dl.acm.org/doi/pdf/10.1145/3531065"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Auto-Icon+: An Automated End-to-End Code Generation Tool for Icon Designs in UI Development"
+                      data-publication-id="feng-2022-auto-icon-plus"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://www.imgcook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="tool"
+                      data-publication-title="Auto-Icon Tool"
+                      data-publication-id="feng-2022-auto-icon-tool"
+                    >
+                      &#128295;
+                      <span class="ml-1">tool</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2021 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2021 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2021"
+              aria-label="Toggle 2021 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2021
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2021">
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2021-auto-icon-an-automated-code-generation-tool-for-icon-designs-assisting-in-ui-development"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Auto-icon: An automated code generation tool for icon designs assisting in UI development
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Suyu Ma</span>, <span>Jinzhong Yu</span>,
+                    <span>Chunyang Chen</span>, <span>TingTing Zhou</span>,
+                    <span>Yankun Zhen</span>
+                  </p>
+              
+                  <!-- Venue, Award, Materials -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">IUI 2021</span>
+              
+                    <!-- Award / Highlight -->
+                    <span class="award-badge text-xs">
+                      &#127942; Highlight of IUI 2021 (11/241)
+                    </span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="./papers/icon_IUI21.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Auto-icon: An automated code generation tool for icon designs assisting in UI development"
+                      data-publication-id="feng-2021-auto-icon-an-automated-code-generation-tool-for-icon-designs-assisting-in-ui-development"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://www.imgcook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="tool"
+                      data-publication-title="Auto-icon Tool"
+                      data-publication-id="feng-2021-auto-icon-tool"
+                    >
+                      &#128295;
+                      <span class="ml-1">tool</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2020 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2020"
+              aria-label="Toggle 2020 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2020
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2020">
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="chen-2020-from-lost-to-found-discover-missing-ui-design-semantics-through-recovering-missing-tags"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    From lost to found: Discover missing UI design semantics through recovering missing tags
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Chunyang Chen</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Zhengyang Liu</span>, <span>Zhenchang Xing</span>,
+                    <span>Shengdong Zhao</span>
+                  </p>
+              
+                  <!-- Venue + Materials -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">CSCW 2020</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://arxiv.org/abs/2008.06895"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="From lost to found: Discover missing UI design semantics through recovering missing tags"
+                      data-publication-id="chen-2020-from-lost-to-found-discover-missing-ui-design-semantics-through-recovering-missing-tags"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/UITagPrediction/CSCW2020"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="CSCW2020 Code"
+                      data-publication-id="chen-2020-cscw-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="xie-2020-uied-a-hybrid-tool-for-gui-element-detection"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    UIED: a hybrid tool for GUI element detection
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Mulong Xie</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Zhenchang Xing</span>, <span>Jieshan Chen</span>,
+                    <span>Chunyang Chen</span>
+                  </p>
+              
+                  <!-- Venue + Materials -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">ESEC/FSE 2020</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="https://www.researchgate.net/profile/Mulong-Xie/publication/346170544_UIED_a_hybrid_tool_for_GUI_element_detection/links/5fbca13a458515b797641b72/UIED-a-hybrid-tool-for-GUI-element-detection.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="UIED: a hybrid tool for GUI element detection"
+                      data-publication-id="xie-2020-uied-a-hybrid-tool-for-gui-element-detection"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="http://uied.online/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="tool"
+                      data-publication-title="UIED Tool"
+                      data-publication-id="xie-2020-uied-tool"
+                    >
+                      &#128295;
+                      <span class="ml-1">tool</span>
+                    </a>
+              
+                    <a
+                      href="https://github.com/MulongXie/UIED"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="code"
+                      data-publication-title="UIED Code"
+                      data-publication-id="xie-2020-uied-code"
+                    >
+                      &#128187;
+                      <span class="ml-1">code</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 2019 -->
+          <div class="year-section my-8">
+            <h3 class="sr-only">2019 Publications</h3>
+
+            <button
+              class="year-toggle-btn w-full flex items-center justify-between py-3 px-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+              data-year="2019"
+              aria-label="Toggle 2019 publications section"
+              aria-expanded="true"
+            >
+              <div class="flex items-center">
+                <span
+                  class="text-xl font-bold"
+                  style="color: var(--color-primary);"
+                  aria-hidden="true"
+                >
+                  2019
+                </span>
+              </div>
+              <svg
+                class="year-toggle-icon w-5 h-5 text-gray-600 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewbox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="year-papers mt-4 space-y-3" data-year="2019">
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="chen-2019-gallery-dc-design-search-and-knowledge-discovery-through-auto-created-gui-component-gallery"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Gallery D.C.: Design Search and Knowledge Discovery through Auto-created GUI Component Gallery
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span>Chunyang Chen</span>,
+                    <span class="font-semibold text-link">Sidong Feng</span>,
+                    <span>Zhenchang Xing</span>, <span>Linda Liu</span>,
+                    <span>Shendong Zhao</span>, <span>Jinshui Wang</span>
+                  </p>
+              
+                  <!-- Venue + Materials -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">CSCW 2019</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="./papers/designGallery_CSCW19.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Gallery D.C.: Design Search and Knowledge Discovery through Auto-created GUI Component Gallery"
+                      data-publication-id="chen-2019-gallery-dc"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="http://mui-collection.herokuapp.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="tool"
+                      data-publication-title="Gallery DC Tool"
+                      data-publication-id="chen-2019-gallery-dc-tool"
+                    >
+                      &#128295;
+                      <span class="ml-1">tool</span>
+                    </a>
+              
+                    <a
+                      href="./papers/cscw2019gallery.pptx"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="slides"
+                      data-publication-title="Gallery DC Slides"
+                      data-publication-id="chen-2019-gallery-dc-slides"
+                    >
+                      &#128250;
+                      <span class="ml-1">slides</span>
+                    </a>
+              
+                    <a
+                      href="https://medium.com/acm-cscw/gui-component-design-gallery-through-invisible-crowdsourcing-e53845b9f3fe"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="blog"
+                      data-publication-title="Gallery DC Blog"
+                      data-publication-id="chen-2019-gallery-dc-blog"
+                    >
+                      &#128221;
+                      <span class="ml-1">blog</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="mb-3" data-section-type="Conference &amp; Journal Papers">
+                <article
+                  class="paper-card bg-white rounded-lg p-4 shadow-sm border border-gray-200"
+                  id="feng-2019-dynamic-facial-stress-recognition-in-temporal-convolutional-network"
+                >
+                  <!-- Title -->
+                  <h3 class="text-base font-semibold text-text mb-1 leading-tight">
+                    Dynamic facial stress recognition in temporal convolutional network
+                  </h3>
+              
+                  <!-- Authors -->
+                  <p class="text-sm text-text mb-1">
+                    <span class="font-semibold text-link">Sidong Feng</span>
+                  </p>
+              
+                  <!-- Venue + Materials -->
+                  <div class="flex flex-wrap items-center gap-2 text-sm">
+                    <!-- Venue -->
+                    <span class="font-medium text-text-light">ICONIP 2019</span>
+              
+                    <!-- Materials -->
+                    <a
+                      href="./papers/iconip2019.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="pdf"
+                      data-publication-title="Dynamic facial stress recognition in temporal convolutional network"
+                      data-publication-id="feng-2019-dynamic-facial-stress-recognition"
+                    >
+                      &#128196;
+                      <span class="ml-1">PDF</span>
+                    </a>
+              
+                    <a
+                      href="./papers/iconipposter.png"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="material-link inline-flex items-center px-2 py-1 text-xs font-medium rounded text-info"
+                      style="background-color: var(--color-info-light);"
+                      data-material-type="poster"
+                      data-publication-title="ICONIP Poster"
+                      data-publication-id="feng-2019-iconip-poster"
+                    >
+                      &#128444;
+                      <span class="ml-1">poster</span>
+                    </a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="text-center text-sm text-gray-600">
+          <p>
+            &copy; 2026 Sidong Feng. Built with
+            <a href="https://astro.build">Astro</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module">
+    (async () => {
+      try {
+        if (!("serviceWorker" in navigator)) return;
+
+        const registrations = await navigator.serviceWorker.getRegistrations();
+
+        if (registrations.length) {
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+        }
+
+        if ("caches" in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map((key) => caches.delete(key)));
+        }
+
+        if (!sessionStorage.getItem("sw-cleanup-done")) {
+          sessionStorage.setItem("sw-cleanup-done", "1");
+          location.reload();
+        }
+      } catch {}
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.querySelector(".mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (button && mobileMenu) {
+        button.addEventListener("click", function () {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+
+          mobileMenu.classList.toggle("hidden");
+          button.setAttribute("aria-expanded", String(!isOpen));
+
+          const srText = button.querySelector(".sr-only");
+          if (srText) {
+            srText.textContent = isOpen ? "Open main menu" : "Close main menu";
+          }
+        });
+      }
+    });
+  </script>
+
+  <script src="_astro/publications.astro_astro_type_script_index_0_lang.DL6OwV2m.js"></script>
+</body>
+</html>

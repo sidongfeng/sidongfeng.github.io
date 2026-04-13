@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="description"
+      content="Latest news, achievements, and announcements from Sidong Feng at CUHK (Shenzhen)."
+    />
+    <meta
+      name="keywords"
+      content="research news, academic achievements, HCI research updates, SE research updates, paper acceptances"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sidong Feng" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en-US" />
+    <meta name="generator" content="Astro v5.13.5" />
+    <meta name="theme-color" content="#34495E" />
+    <meta name="msapplication-TileColor" content="#34495E" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <title>News | Sidong Feng</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://sidongfeng.github.io/news" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//scholar.google.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+    <link rel="dns-prefetch" href="//twitter.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//dblp.org" />
+    <link rel="dns-prefetch" href="//orcid.org" />
+
+    <!-- Page Prefetch -->
+    <link rel="prefetch" href="/index.html" as="document" />
+    <link rel="prefetch" href="/publications.html" as="document" />
+
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-170043246-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-170043246-1");
+    </script>
+
+    <!-- Web Vitals via web-vitals library -->
+    <script>
+      async function loadWebVitals() {
+        const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import(
+          "https://unpkg.com/web-vitals@3/dist/web-vitals.js"
+        );
+
+        function sendToGA(metric) {
+          gtag("event", metric.name, {
+            event_category: "Core Web Vitals",
+            value: Math.round(
+              metric.name === "CLS" ? metric.value * 1000 : metric.value
+            ),
+            metric_id: metric.id,
+            metric_value: metric.value,
+            metric_delta: metric.delta,
+            custom_parameters: {
+              metric_rating: metric.rating,
+            },
+          });
+        }
+
+        getCLS(sendToGA);
+        getFID(sendToGA);
+        getFCP(sendToGA);
+        getLCP(sendToGA);
+        getTTFB(sendToGA);
+      }
+
+      if (document.readyState === "complete") {
+        loadWebVitals();
+      } else {
+        window.addEventListener("load", loadWebVitals);
+      }
+    </script>
+
+    <!-- Academic/Event Analytics -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pageType = document.body?.dataset?.pageType || "unknown";
+        const contentCategory =
+          document.body?.dataset?.contentCategory || "general";
+
+        const trackEvent = (name, params = {}) => {
+          gtag("event", name, params);
+        };
+
+        const addClickTracking = (selector, handler) => {
+          document.querySelectorAll(selector).forEach((el) => {
+            el.addEventListener("click", handler);
+          });
+        };
+
+        addClickTracking("a[data-publication-title]", function () {
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("publication_click", {
+            event_category: "Publications",
+            event_label: publicationTitle,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("a[data-material-type]", function () {
+          const materialType =
+            this.getAttribute("data-material-type") || "unknown";
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("material_click", {
+            event_category: "Publications",
+            event_label: `${materialType} - ${publicationTitle}`,
+            material_type: materialType,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("[data-filter-type]", function () {
+          const filterType = this.getAttribute("data-filter-type") || "unknown";
+          const filterValue =
+            this.getAttribute("data-filter") ||
+            this.getAttribute("data-type") ||
+            "unknown";
+          const filterLabel = this.textContent?.trim() || filterValue;
+
+          trackEvent("filter_click", {
+            event_category: "Publications",
+            event_label: `${filterType}: ${filterLabel}`,
+            filter_type: filterType,
+            filter_keyword: filterValue,
+            page_type: pageType,
+            content_category: contentCategory,
+          });
+        });
+
+        function trackDeepLinkArrival() {
+          if (!window.location.hash) return;
+
+          const hash = window.location.hash.substring(1);
+          const targetElement = document.getElementById(hash);
+
+          if (targetElement && targetElement.classList.contains("paper-card")) {
+            const publicationTitle =
+              targetElement
+                .querySelector("[data-publication-title]")
+                ?.getAttribute("data-publication-title") ||
+              targetElement.querySelector("h3")?.textContent?.trim() ||
+              "Unknown";
+
+            trackEvent("deep_link_arrival", {
+              event_category: "Publications",
+              event_label: publicationTitle,
+              publication_title: publicationTitle,
+              publication_id: hash,
+              page_type: pageType,
+              content_category: contentCategory,
+              non_interaction: true,
+            });
+          }
+        }
+
+        setTimeout(trackDeepLinkArrival, 500);
+        window.addEventListener("hashchange", () => {
+          setTimeout(trackDeepLinkArrival, 100);
+        });
+
+        addClickTracking('a[href*="/files/"], a[href$=".pdf"]', function () {
+          trackEvent("file_download", {
+            event_category: "Publications",
+            event_label: this.href.split("/").pop(),
+            value: 1,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking(
+          'a[href^="http"]:not([href*="sidongfeng.github.io"])',
+          function () {
+            trackEvent("outbound_click", {
+              event_category: "External Links",
+              event_label: this.href,
+              transport: "beacon",
+            });
+          }
+        );
+
+        document
+          .querySelectorAll('a[href^="/"], a[href*="sidongfeng.github.io]')
+          .forEach((link) => {
+            if (link.href.startsWith("http") && !link.href.includes("sidongfeng.github.io")) {
+              return;
+            }
+
+            if (
+              link.hasAttribute("data-publication-title") ||
+              link.hasAttribute("data-material-type")
+            ) {
+              return;
+            }
+
+            link.addEventListener("click", function () {
+              const linkText =
+                this.textContent?.trim() ||
+                this.getAttribute("aria-label") ||
+                "unnamed";
+
+              trackEvent("internal_link_click", {
+                event_category: "Navigation",
+                event_label: `${linkText} → ${this.href}`,
+                link_text: linkText,
+                link_destination: this.href,
+                link_source_page: window.location.pathname,
+                page_type: pageType,
+                transport: "beacon",
+              });
+            });
+          });
+
+        addClickTracking("[data-share]", function () {
+          trackEvent("share", {
+            event_category: "Social",
+            event_label: this.dataset.share,
+            value: 1,
+          });
+        });
+
+        document.querySelectorAll("form").forEach((form) => {
+          form.addEventListener("submit", function () {
+            trackEvent("form_submit", {
+              event_category: "Engagement",
+              event_label: this.id || this.className || "unnamed_form",
+            });
+          });
+        });
+
+        let startTime = Date.now();
+        let engaged = false;
+        let heartbeatTimer;
+        let maxScroll = 0;
+
+        function trackEngagement() {
+          if (engaged) return;
+
+          engaged = true;
+          heartbeatTimer = setInterval(() => {
+            trackEvent("page_engagement", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              non_interaction: true,
+            });
+          }, 30000);
+        }
+
+        window.addEventListener("scroll", () => {
+          trackEngagement();
+
+          const scrollPercent = Math.round(
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+              100
+          );
+
+          if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+            maxScroll = scrollPercent;
+            trackEvent("scroll_depth", {
+              event_category: "Engagement",
+              value: scrollPercent,
+              non_interaction: true,
+            });
+          }
+        });
+
+        window.addEventListener("beforeunload", () => {
+          if (heartbeatTimer) {
+            clearInterval(heartbeatTimer);
+          }
+
+          if (engaged) {
+            trackEvent("session_time", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              transport: "beacon",
+            });
+          }
+        });
+      });
+    </script>
+
+    <!-- Error Tracking -->
+    <script>
+      window.addEventListener("error", (e) => {
+        gtag("event", "javascript_error", {
+          event_category: "Errors",
+          event_label: `${e.message} at ${e.filename}:${e.lineno}`,
+          value: 1,
+          non_interaction: true,
+        });
+      });
+
+      window.addEventListener("unhandledrejection", (e) => {
+        gtag("event", "promise_rejection", {
+          event_category: "Errors",
+          event_label: String(e.reason),
+          value: 1,
+          non_interaction: true,
+        });
+      });
+    </script>
+
+    <!-- Performance Monitor -->
+    <script>
+      class PerformanceMonitor {
+        constructor() {
+          this.metrics = {};
+          this.observers = [];
+          this.webVitals = {
+            lcp: null,
+            fid: null,
+            cls: null,
+            inp: null,
+            ttfb: null,
+            fcp: null,
+          };
+
+          this.init();
+        }
+
+        init() {
+          this.measureCoreWebVitals();
+          this.measureResourceTiming();
+          this.observeLongTasks();
+          this.observeLayoutShifts();
+          this.measurePaintTiming();
+          this.measureMemory();
+
+          window.addEventListener("load", () => {
+            setTimeout(() => this.reportMetrics(), 2000);
+          });
+        }
+
+        measureCoreWebVitals() {
+          this.observeLCP();
+          this.observeFID();
+          this.observeINP();
+          this.measureTTFB();
+        }
+
+        observeLCP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const entries = list.getEntries();
+              const lastEntry = entries[entries.length - 1];
+
+              this.webVitals.lcp = Math.round(
+                lastEntry.renderTime || lastEntry.loadTime
+              );
+              this.metrics.lcp = this.webVitals.lcp;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "LCP",
+                value: this.webVitals.lcp,
+                metric_id: "v3-" + Date.now(),
+                metric_value: this.webVitals.lcp,
+                metric_delta: this.webVitals.lcp,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("LCP", this.webVitals.lcp, {
+                good: 2500,
+                needsImprovement: 4000,
+              });
+            });
+
+            observer.observe({
+              type: "largest-contentful-paint",
+              buffered: true,
+            });
+            this.observers.push(observer);
+          } catch {
+            console.log("LCP observer not supported");
+          }
+        }
+
+        observeFID() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (this.webVitals.fid) continue;
+
+                this.webVitals.fid = Math.round(
+                  entry.processingStart - entry.startTime
+                );
+                this.metrics.fid = this.webVitals.fid;
+
+                gtag("event", "web_vitals", {
+                  event_category: "Web Vitals",
+                  event_label: "FID",
+                  value: this.webVitals.fid,
+                  metric_id: "v3-" + Date.now(),
+                  metric_value: this.webVitals.fid,
+                  metric_delta: this.webVitals.fid,
+                  non_interaction: true,
+                });
+
+                this.logVitalRating("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                });
+              }
+            });
+
+            observer.observe({ type: "first-input", buffered: true });
+            this.observers.push(observer);
+          } catch {
+            console.log("FID observer not supported");
+          }
+        }
+
+        observeINP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let maxDuration = 0;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                const duration = entry.processingEnd
+                  ? entry.processingEnd - entry.startTime
+                  : entry.duration;
+
+                if (duration > maxDuration) {
+                  maxDuration = duration;
+                  this.webVitals.inp = Math.round(duration);
+                  this.metrics.inp = this.webVitals.inp;
+                }
+              }
+            });
+
+            observer.observe({
+              type: "event",
+              buffered: true,
+              durationThreshold: 16,
+            });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  this.webVitals.inp
+                ) {
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "INP",
+                    value: this.webVitals.inp,
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: this.webVitals.inp,
+                    metric_delta: this.webVitals.inp,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("INP", this.webVitals.inp, {
+                    good: 200,
+                    needsImprovement: 500,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("INP observer not supported");
+          }
+        }
+
+        measureTTFB() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const navigationEntries = performance.getEntriesByType("navigation");
+          if (!navigationEntries.length) return;
+
+          const navEntry = navigationEntries[0];
+          this.webVitals.ttfb = Math.round(navEntry.responseStart);
+          this.metrics.ttfb = this.webVitals.ttfb;
+
+          gtag("event", "web_vitals", {
+            event_category: "Web Vitals",
+            event_label: "TTFB",
+            value: this.webVitals.ttfb,
+            metric_id: "v3-" + Date.now(),
+            metric_value: this.webVitals.ttfb,
+            metric_delta: this.webVitals.ttfb,
+            non_interaction: true,
+          });
+
+          this.logVitalRating("TTFB", this.webVitals.ttfb, {
+            good: 800,
+            needsImprovement: 1800,
+          });
+        }
+
+        logVitalRating(name, value, thresholds) {
+          let rating = "good";
+
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          const emoji =
+            rating === "good"
+              ? "✅"
+              : rating === "needs-improvement"
+              ? "⚠️"
+              : "❌";
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.log(`${emoji} ${name}: ${value}ms (${rating})`);
+          }
+
+          return rating;
+        }
+
+        measureResourceTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const resources = performance.getEntriesByType("resource");
+          let totalSize = 0;
+          const slowResources = [];
+
+          resources.forEach((resource) => {
+            totalSize += resource.transferSize || 0;
+
+            if (resource.duration > 1000) {
+              slowResources.push({
+                name: resource.name.split("/").pop(),
+                duration: resource.duration,
+                size: resource.transferSize,
+              });
+            }
+          });
+
+          this.metrics.resourceCount = resources.length;
+          this.metrics.totalResourceSize = totalSize;
+          this.metrics.slowResources = slowResources;
+        }
+
+        observeLongTasks() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const longTasks = list.getEntries();
+              if (!longTasks.length) return;
+
+              this.metrics.longTasks =
+                (this.metrics.longTasks || 0) + longTasks.length;
+
+              longTasks.forEach((task) => {
+                gtag("event", "long_task", {
+                  event_category: "Performance",
+                  value: Math.round(task.duration),
+                  non_interaction: true,
+                  custom_parameters: {
+                    task_duration: task.duration,
+                    task_start: task.startTime,
+                  },
+                });
+              });
+            });
+
+            observer.observe({ entryTypes: ["longtask"] });
+            this.observers.push(observer);
+          } catch {
+            console.log("Long task observer not supported");
+          }
+        }
+
+        observeLayoutShifts() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let clsValue = 0;
+            let reportedToCWV = false;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (!entry.hadRecentInput) {
+                  clsValue += entry.value;
+                }
+              }
+
+              this.webVitals.cls = clsValue;
+              this.metrics.cumulativeLayoutShift = clsValue;
+            });
+
+            observer.observe({ entryTypes: ["layout-shift"] });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  !reportedToCWV &&
+                  clsValue > 0
+                ) {
+                  reportedToCWV = true;
+
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "CLS",
+                    value: Math.round(clsValue * 1000),
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: clsValue,
+                    metric_delta: clsValue,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("CLS", clsValue, {
+                    good: 0.1,
+                    needsImprovement: 0.25,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("Layout shift observer not supported");
+          }
+        }
+
+        measurePaintTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const paintEntries = performance.getEntriesByType("paint");
+
+          paintEntries.forEach((entry) => {
+            const value = Math.round(entry.startTime);
+            this.metrics[entry.name.replace("-", "_")] = value;
+
+            if (entry.name === "first-contentful-paint") {
+              this.webVitals.fcp = value;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "FCP",
+                value,
+                metric_id: "v3-" + Date.now(),
+                metric_value: value,
+                metric_delta: value,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("FCP", value, {
+                good: 1800,
+                needsImprovement: 3000,
+              });
+            }
+          });
+        }
+
+        measureMemory() {
+          if (!("memory" in performance)) return;
+
+          this.metrics.memoryUsage = {
+            used: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024),
+            total: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024),
+            limit: Math.round(performance.memory.jsHeapSizeLimit / 1024 / 1024),
+          };
+        }
+
+        reportMetrics() {
+          if ("performance" in window && performance.timing) {
+            const timing = performance.timing;
+            this.metrics.pageLoadTime =
+              timing.loadEventEnd - timing.navigationStart;
+            this.metrics.domReadyTime =
+              timing.domContentLoadedEventEnd - timing.navigationStart;
+          }
+
+          gtag("event", "performance_metrics", {
+            event_category: "Performance",
+            custom_parameters: {
+              page_load_time: this.metrics.pageLoadTime,
+              dom_ready_time: this.metrics.domReadyTime,
+              resource_count: this.metrics.resourceCount,
+              total_size: Math.round(
+                (this.metrics.totalResourceSize || 0) / 1024
+              ),
+              long_tasks: this.metrics.longTasks || 0,
+              first_paint: this.metrics.first_paint,
+              first_contentful_paint: this.metrics.first_contentful_paint,
+              memory_used: this.metrics.memoryUsage?.used,
+            },
+            non_interaction: true,
+          });
+
+          this.checkPerformanceBudget();
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.group("🚀 Performance Metrics");
+
+            console.group("📊 Core Web Vitals");
+            console.table({
+              "LCP (Largest Contentful Paint)": {
+                value: this.webVitals.lcp
+                  ? `${this.webVitals.lcp}ms`
+                  : "Not measured",
+                target: "< 2500ms (good), < 4000ms (needs improvement)",
+                status: this.getRatingEmoji("LCP", this.webVitals.lcp, {
+                  good: 2500,
+                  needsImprovement: 4000,
+                }),
+              },
+              "FID (First Input Delay)": {
+                value: this.webVitals.fid
+                  ? `${this.webVitals.fid}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 100ms (good), < 300ms (needs improvement)",
+                status: this.getRatingEmoji("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                }),
+              },
+              "CLS (Cumulative Layout Shift)": {
+                value:
+                  this.webVitals.cls !== null
+                    ? this.webVitals.cls.toFixed(3)
+                    : "Not measured",
+                target: "< 0.1 (good), < 0.25 (needs improvement)",
+                status: this.getRatingEmoji("CLS", this.webVitals.cls, {
+                  good: 0.1,
+                  needsImprovement: 0.25,
+                }),
+              },
+              "INP (Interaction to Next Paint)": {
+                value: this.webVitals.inp
+                  ? `${this.webVitals.inp}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 200ms (good), < 500ms (needs improvement)",
+                status: this.getRatingEmoji("INP", this.webVitals.inp, {
+                  good: 200,
+                  needsImprovement: 500,
+                }),
+              },
+              "FCP (First Contentful Paint)": {
+                value: this.webVitals.fcp
+                  ? `${this.webVitals.fcp}ms`
+                  : "Not measured",
+                target: "< 1800ms (good), < 3000ms (needs improvement)",
+                status: this.getRatingEmoji("FCP", this.webVitals.fcp, {
+                  good: 1800,
+                  needsImprovement: 3000,
+                }),
+              },
+              "TTFB (Time to First Byte)": {
+                value: this.webVitals.ttfb
+                  ? `${this.webVitals.ttfb}ms`
+                  : "Not measured",
+                target: "< 800ms (good), < 1800ms (needs improvement)",
+                status: this.getRatingEmoji("TTFB", this.webVitals.ttfb, {
+                  good: 800,
+                  needsImprovement: 1800,
+                }),
+              },
+            });
+            console.groupEnd();
+
+            console.group("⚙️ Other Metrics");
+            console.table(this.metrics);
+            console.groupEnd();
+
+            console.groupEnd();
+          }
+        }
+
+        getRatingEmoji(name, value, thresholds) {
+          if (value === null || value === undefined) return "⏳";
+
+          let rating = "good";
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          return rating === "good"
+            ? "✅ Good"
+            : rating === "needs-improvement"
+            ? "⚠️ Needs improvement"
+            : "❌ Poor";
+        }
+
+        checkPerformanceBudget() {
+          const budgets = {
+            lcp: 2500,
+            fcp: 1800,
+            cls: 0.1,
+            fid: 100,
+            inp: 200,
+            ttfb: 800,
+            pageLoadTime: 3000,
+            domReadyTime: 1500,
+            totalResourceSize: 2097152,
+            longTasks: 3,
+            first_contentful_paint: 1800,
+          };
+
+          const violations = [];
+          const warnings = [];
+
+          Object.entries(this.webVitals).forEach(([metric, value]) => {
+            if (
+              value !== null &&
+              value !== undefined &&
+              Object.prototype.hasOwnProperty.call(budgets, metric) &&
+              value > budgets[metric]
+            ) {
+              violations.push({
+                metric: metric.toUpperCase(),
+                value: metric === "cls" ? value.toFixed(3) : `${value}ms`,
+                budget:
+                  metric === "cls"
+                    ? budgets[metric].toFixed(3)
+                    : `${budgets[metric]}ms`,
+                type: "Core Web Vital",
+              });
+            }
+          });
+
+          Object.entries(budgets).forEach(([metric, budget]) => {
+            if (Object.prototype.hasOwnProperty.call(this.webVitals, metric)) {
+              return;
+            }
+
+            const value = this.metrics[metric];
+            if (value && value > budget) {
+              warnings.push({
+                metric,
+                value,
+                budget,
+                type: "Performance",
+              });
+            }
+          });
+
+          if (violations.length > 0) {
+            gtag("event", "core_web_vitals_violation", {
+              event_category: "Performance",
+              event_label: violations.map((v) => v.metric).join(","),
+              value: violations.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Core Web Vitals budget violations:");
+              console.table(violations);
+            }
+          }
+
+          if (warnings.length > 0) {
+            gtag("event", "performance_budget_violation", {
+              event_category: "Performance",
+              event_label: warnings.map((v) => v.metric).join(","),
+              value: warnings.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Performance budget warnings:");
+              console.table(warnings);
+            }
+          }
+
+          return { violations, warnings };
+        }
+
+        cleanup() {
+          this.observers.forEach((observer) => observer.disconnect());
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        window.performanceMonitor = new PerformanceMonitor();
+      });
+
+      window.addEventListener("beforeunload", () => {
+        if (window.performanceMonitor) {
+          window.performanceMonitor.cleanup();
+        }
+      });
+    </script>
+  </head>
+
+  <body
+    class="bg-white text-gray-900"
+    data-page-type="news"
+    data-content-category="article"
+  >
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="min-h-screen flex flex-col">
+      <!-- Navigation -->
+      <nav
+        class="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur-sm"
+      >
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex-shrink-0">
+              <a
+                href="index.html"
+                class="logo-link text-xl font-bold"
+                style="color: var(--color-primary);"
+              >
+                Sidong Feng
+              </a>
+            </div>
+
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                <a href="index.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                <a href="news.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">News</a>
+                <a href="publications.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Publications</a>
+                <a href="students.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Students</a>
+                <a href="join.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Join Us</a>
+                <!-- <a href="media.html" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Media</a> -->
+              </div>
+            </div>
+
+            <div class="md:hidden">
+              <button
+                type="button"
+                class="mobile-menu-btn rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+          <div class="space-y-1 border-t border-gray-200 bg-white px-2 pt-2 pb-3 sm:px-3">
+            <a href="index.html" class="nav-link block px-3 py-2 text-base font-medium">Home</a>
+            <a href="news.html" class="nav-link block px-3 py-2 text-base font-medium">News</a>
+            <a href="publications.html" class="nav-link block px-3 py-2 text-base font-medium">Publications</a>
+            <a href="students.html" class="nav-link block px-3 py-2 text-base font-medium">Students</a>
+            <a href="join.html" class="nav-link block px-3 py-2 text-base font-medium">Join Us</a>
+            <!-- <a href="media.html" class="nav-link block px-3 py-2 text-base font-medium">Media</a> -->
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main -->
+      <main id="main-content" class="flex-1">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav" data-astro-cid-qaanghzh>
+            <ol class="breadcrumb" data-astro-cid-qaanghzh>
+              <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+                <a
+                  href="index.html"
+                  class="breadcrumb-link"
+                  data-astro-cid-qaanghzh
+                >
+                  Home
+                </a>
+                <span
+                  class="breadcrumb-separator"
+                  aria-hidden="true"
+                  data-astro-cid-qaanghzh
+                >
+                  /
+                </span>
+              </li>
+              <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+                <span
+                  class="breadcrumb-current"
+                  aria-current="page"
+                  data-astro-cid-qaanghzh
+                >
+                  News
+                </span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="mb-8">
+            <h1 class="page-title">News</h1>
+            <p class="item-spacing text-lg text-text-light">
+              Latest updates, announcements, and achievements.
+            </p>
+
+            <div class="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+              <p class="text-blue-900">
+                <strong>Recruitment:</strong>
+                I am always looking for self-motivated PhD students with full scholarship, master of 
+                philosophy students, post-doctoral researchers, and research assistants.
+                Visit the
+                <a href="join.html" class="text-link hover:text-link-hover font-medium">
+                    Join Us 
+                </a>
+                page for details.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div class="space-y-1">
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026.05</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I will start my position as <strong>Assistant Professor</strong> at CUHK (Shenzhen).
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026.04</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I receive the <strong>Gemini Academic Program Award</strong> from Google Cloud!
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026.03</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    Our paper "ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models"
+                    is accepted to <strong>FSE 2026</strong>!
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.11</div>
+                <div class="flex-1 text-sm">
+                  I was awarded 
+                  <a href="https://www.amazon.science/research-areas/latest-news/63-amazon-research-award-recipients-announced-spring-2025"
+                     class="text-link hover:text-link-hover transition-colors"
+                     target="_blank">
+                    Amazon Research Award
+                  </a>!
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.11</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I was awarded <strong>Distinguished Reviewer</strong> in ASE 2025!
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.10</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I was awarded <strong>2025 Dean’s Award for Excellence by a Graduate Research Student</strong> at Monash University!
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.09</div>
+                <div class="flex-1 text-sm">
+                  Invited seminar talk at <strong>University of Victoria</strong>, Canada (Associate Professor 
+                  <a href="https://neilernst.net/" target="_blank">Neil Ernst</a>).
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.09</div>
+                <div class="flex-1 text-sm">
+                  I taught the course as instructor
+                  <a
+                    href="https://www.cs.cit.tum.de/en/seai"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    [IN2107] Graphical User Interfaces
+                  </a>
+                  in Fall 2025.
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.08</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I successfully defended my <strong>Ph.D. degree</strong> at Monash University.
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.08</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/abs/2412.20071"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Towards Human-AI Synergy in UI Design: Supporting Iterative Generation with LLMs"
+                  </a>
+                  is accepted to <strong>TOCHI 2025</strong>!
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.07</div>
+                <div class="flex-1 text-sm">
+                  We organize the 
+                  <a href="https://conf.researchr.org/home/icse-2026/uise-2026"
+                     class="text-link hover:text-link-hover transition-colors"
+                     target="_blank">
+                    1st International Workshop on User Interface and Experience for Software Engineering (UISE)
+                  </a>
+                  co-located with ICSE 2026, please submit your paper :)
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.06</div>
+                <div class="flex-1 text-sm">
+                  Our paper 
+                  <a href="https://arxiv.org/abs/2506.17539"
+                     class="text-link hover:text-link-hover transition-colors"
+                     target="_blank">
+                    "Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing"
+                  </a>
+                  is accepted to <strong>ICSE 2026</strong> (Acceptance rate: 9.2%)!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.05</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    Invited seminar talk at <strong>Aalto University</strong>, Finland (Professor 
+                    <a href="https://www.aalto.fi/en/people/casper-lassenius" target="_blank">Casper Lassenius</a>).
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.04</div>
+                <div class="flex-1 text-sm">
+                  Release the first GUI Agent framework
+                  <a href="https://arxiv.org/pdf/2602.11514"
+                     class="text-link hover:text-link-hover transition-colors"
+                     target="_blank">
+                    Autonomous GUI Automation Levels
+                  </a>!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.03</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/abs/2504.15474"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Agent for User: Testing Multi-User Interactive Features in TikTok"
+                  </a>
+                  is accepted to <strong>ICSE 2025 Industry Track</strong>!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.03</div>
+                <div class="flex-1 text-sm">
+                  I taught the course as co-instructor
+                  <a
+                    href="https://www.cs.cit.tum.de/en/seai"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    [IN2106] Development of LLM-driven GUI Agents
+                  </a>
+                  in Spring 2025.
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.02</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    Invited talk at <strong>University of Luxembourg</strong> (Professor 
+                    <a href="https://jacquesklein2302.github.io/" target="_blank">Jacques Klein</a>).
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.02</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    Invited as reviewer for <strong>Nature Communications</strong>.
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.02</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I was awarded <strong>Monash FIT Supplementary Funding Scheme</strong>.
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.12</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/abs/2502.15099"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "An Empirical Study on Leveraging Images in Automated Bug Report Reproduction"
+                  </a>
+                  is accepted to <strong>MSR 2025</strong>!
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.10</div>
+                <div class="flex-1 text-sm">
+                  Lab visiting to <strong>Hong Kong University of Science and Technology</strong>, China (Assistant Professor 
+                  <a href="https://personal.hkust-gz.edu.cn/ding/" target="_blank">Zishuo Ding</a>).
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.09</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/pdf/2409.07829"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat"
+                  </a>
+                  is accepted to <strong>ASE 2024 Industry Track</strong>!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.09</div>
+                <div class="flex-1 text-sm">
+                  I taught the course as instructor
+                  <a
+                    href="https://www.cs.cit.tum.de/en/seai"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    [INHN4010] Automated Mobile App Testing
+                  </a>
+                  in Spring 2024.
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.07</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/pdf/2407.05165"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps"
+                  </a>
+                  is accepted to <strong>ISSTA 2024</strong>!
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.06</div>
+                <div class="flex-1 text-sm">
+                  Invited seminar talk at <strong>Technical University of Munich</strong>, Germany (Professor 
+                  <a href="https://chunyang-chen.github.io/" target="_blank">Chunyang Chen</a>).
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.03</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/pdf/2306.01987.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Prompting Is All You Need: Automated Android Bug Replay with Large Language Models"
+                  </a>
+                  is accepted to <strong>ICSE 2024</strong> (Acceptance rate: 6.6%)!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2024.02</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling"
+                  </a>
+                  is accepted to <strong>CHI 2024</strong>!
+                </div>
+              </div>
+              
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2023.09</div>
+                <div class="flex-1 text-sm">
+                  Lab visiting to <strong>University of Alberta</strong>, Canada (Associate Professor 
+                  <a href="https://www.malei.org/" target="_blank">Lei Ma</a>).
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2023.06</div>
+                <div class="flex-1 text-sm">
+                  Our paper
+                  <a
+                    href="https://arxiv.org/pdf/2308.06657.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    "Towards Efficient Record and Replay: A Case Study in WeChat"
+                  </a>
+                  is accepted to <strong>ESEC/FSE 2023 Industry Track</strong>!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2023.06</div>
+                <div class="flex-1 text-sm">
+                  Two papers (
+                  <a
+                    href="https://arxiv.org/pdf/2308.03252.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    P1
+                  </a>
+                  ,
+                  <a
+                    href="https://arxiv.org/pdf/2308.05898.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    P2
+                  </a>)
+                  are accepted to <strong>UIST 2023</strong>!
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2023.06</div>
+                <div class="flex-1 text-sm">
+                  Two papers (
+                  <a
+                    href="https://arxiv.org/pdf/2212.05203.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    P1
+                  </a>
+                  ,
+                  <a
+                    href="https://arxiv.org/pdf/2302.00886.pdf"
+                    class="text-link hover:text-link-hover transition-colors"
+                    target="_blank"
+                  >
+                    P2
+                  </a>)
+                  are accepted to <strong>ICSE 2023</strong>! P1 received the <strong>ACM SIGSOFT Distinguished Paper Award</strong>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.05</div>
+                <div class="flex-1 text-sm">
+                  <span class="text-text">
+                    I started my <strong>Ph.D. journey</strong> at Monash University.
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-gray-50 mt-20">
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <div class="text-center text-sm text-gray-600">
+            <p>
+              &copy; 2026 Sidong Feng. Built with
+              <a href="https://astro.build">Astro</a>.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Page scripts -->
+    <script type="module">
+      (async () => {
+        try {
+          if (!("serviceWorker" in navigator)) return;
+
+          const registrations = await navigator.serviceWorker.getRegistrations();
+
+          if (registrations.length) {
+            await Promise.all(registrations.map((r) => r.unregister()));
+          }
+
+          if ("caches" in window) {
+            const cacheKeys = await caches.keys();
+            await Promise.all(cacheKeys.map((key) => caches.delete(key)));
+          }
+
+          if (!sessionStorage.getItem("sw-cleanup-done")) {
+            sessionStorage.setItem("sw-cleanup-done", "1");
+            location.reload();
+          }
+        } catch {
+          // no-op
+        }
+      })();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.querySelector(".mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        if (!button || !menu) return;
+
+        button.addEventListener("click", () => {
+          const isOpen = !menu.classList.contains("hidden");
+
+          menu.classList.toggle("hidden");
+          button.setAttribute("aria-expanded", String(!isOpen));
+
+          const srText = button.querySelector(".sr-only");
+          if (srText) {
+            srText.textContent = isOpen ? "Open main menu" : "Close main menu";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

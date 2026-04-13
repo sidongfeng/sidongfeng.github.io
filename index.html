@@ -1,551 +1,1036 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sidong Feng is an Assistant Professor at CUHK (Shenzhen) building AI(LLM)-assisted tools to enhance software developers&rsquo; productivity while ensuring the software quality."
+    />
+    <meta
+      name="keywords"
+      content="GUI testing, functional testing, bug reproduction, automated GUI design, software engineering, human-computer interaction, large language models, deep learning, machine learning"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sidong Feng" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en-US" />
+    <meta name="generator" content="Astro v5.13.5" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="google-site-verification" content="mJWw6t-2Mx7vDBcWZwOuirFLxwG5BoJElO5LTZu0Y3k" />
-  <meta name="description"
-    content="I am a PhD student in Faculty of Information Technology, Monash University, Australia, under the supervision of Chunyang Chen, Aldeida Aleti, Yuan-Fang Li and Bohan Zhuang.">
-  <meta name="keywords"
-    content="sidong, sidongfeng, sidong feng, monash, monash university, australian national university, anu, zhenchang xing, chunyang chen">
-  <title>Sidong Feng, Monash University</title>
-  <link rel="shortcut icon" href="./assets/favicon.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sidongfeng.github.io/">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#34495E" />
+    <meta name="msapplication-TileColor" content="#34495E" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Performance: Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170043246-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- DNS Prefetch: Resolve domain names early -->
+    <link rel="dns-prefetch" href="//scholar.google.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+    <link rel="dns-prefetch" href="//twitter.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <!-- <link rel="dns-prefetch" href="//kixlab.org"> -->
+    <link rel="dns-prefetch" href="//dblp.org" />
+    <link rel="dns-prefetch" href="//orcid.org" />
 
-  gtag('config', 'UA-170043246-1');
-  </script>
+    <!-- LCP optimization handled by Image component with fetchpriority="high" and loading="eager" -->
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+    <!-- Prefetch: Likely next pages for faster navigation based on user patterns -->
+    <link rel="prefetch" href="/research.html" as="document" />
+    <link rel="prefetch" href="/publications.html" as="document" />
+    <link rel="prefetch" href="/students.html" as="document" />
+    <link rel="prefetch" href="/join.html" as="document" />
+    <link rel="prefetch" href="/news.html" as="document" />
 
-<body>
+    <!-- Google Fonts - Async loading with optional display to prevent CLS -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&amp;display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&amp;display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sidong Feng",
+        "jobTitle": "Assistant Professor",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "School of Data Science, The Chinese University of Hong Kong (Shenzhen)"
+        },
+        "email": "sidong.feng@monash.edu"
+      }
+    </script>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170043246-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      <div class="profile">
-        <img src="assets/img/sidong-profile.jpeg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="">Sidong Feng</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/FSidong" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
-          <a href="mailto:u6063820@anu.edu.au" class="mail" target="_blank"><i class="bx bxl-gmail"></i></a>
-          <a href="https://au.linkedin.com/in/sidong-feng-5410a2174" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/sidongfeng" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-          <a href="https://scholar.google.com/citations?user=rGaW26gAAAAJ&hl=zh-CN" class="google" target="_blank"><i class="bx bxl-google"></i></a>
+    gtag('config', 'UA-170043246-1');
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-white text-gray-900" data-page-type="home" data-content-category="person">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="min-h-screen flex flex-col">
+      <!-- Navigation -->
+      <nav class="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+              <a
+                href="index.html"
+                class="text-xl font-bold logo-link"
+                style="color: var(--color-primary);"
+              >
+                Sidong Feng
+              </a>
+            </div>
+
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                <a href="index.html" class="px-3 py-2 text-sm font-medium transition-colors nav-active">
+                  Home
+                </a>
+                <a href="news.html" class="px-3 py-2 text-sm font-medium transition-colors nav-link">
+                  News
+                </a>
+                <a
+                  href="publications.html"
+                  class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+                >
+                  Publications
+                </a>
+                <a href="students.html" class="px-3 py-2 text-sm font-medium transition-colors nav-link">
+                  Students
+                </a>
+                <a href="join.html" class="px-3 py-2 text-sm font-medium transition-colors nav-link">
+                  Join Us
+                </a>
+                <!-- <a href="media.html" class="px-3 py-2 text-sm font-medium transition-colors nav-link">
+                  Media
+                </a> -->
+              </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+              <button
+                type="button"
+                class="mobile-menu-btn p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#news" class="nav-link scrollto"><i class="bx bx-news"></i> <span>News</span></a></li>
-          <li><a href="#awards" class="nav-link scrollto"><i class="bx bx-trophy"></i> <span>Awards</span></a></li>
-          <li><a href="#research" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Research</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-user-pin"></i> <span>Services</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            <a href="index.html" class="block px-3 py-2 text-base font-medium nav-active">Home</a>
+            <!-- <a href="research.html" class="block px-3 py-2 text-base font-medium nav-link">Research</a> -->
+            <a href="publications.html" class="block px-3 py-2 text-base font-medium nav-link">
+              Publications
+            </a>
+            <a href="students.html" class="block px-3 py-2 text-base font-medium nav-link">Students</a>
+            <a href="join.html" class="block px-3 py-2 text-base font-medium nav-link">Join Us</a>
+            <!-- <a href="media.html" class="block px-3 py-2 text-base font-medium nav-link">Media</a> -->
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content -->
+      <main class="flex-1" id="main-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <!-- Left sidebar -->
+            <div class="lg:col-span-4">
+              <div class="sticky top-24">
+                <!-- Combined Profile & Contact section -->
+                <div class="profile-card p-6">
+                  <div class="text-center">
+                    <!-- Profile Info -->
+                    <img
+                      src="./assets/img/sidong-profile.jpeg"
+                      alt="Sidong FEng"
+                      loading="eager"
+                      fetchpriority="high"
+                      sizes="(max-width: 1024px) 192px, 384px"
+                      decoding="async"
+                      width="384"
+                      height="384"
+                      class="mx-auto rounded-lg profile-image mb-4 object-cover"
+                    />
+
+                    <h1 class="text-2xl font-bold mb-2" style="color: var(--color-primary);">
+                      Sidong Feng
+                    </h1>
+
+                    <p class="text-text-light mb-4">
+                      Assistant Professor<br />
+                      School of Data Science,<br />
+                      The Chinese University of Hong Kong,<br />
+                      Shenzhen
+                    </p>
+
+                    <!-- <p class="text-text-light mb-4">
+                      Co-founder &amp; CTO<br />
+                      <a href="https://skillbench.com/" class="social-link">SkillBench</a>
+                    </p> -->
+
+                    <!-- Contact Info -->
+                    <div class="border-t border-gray-200 pt-6">
+                      <div class="space-y-2 text-sm text-text-light mb-6">
+                        <!-- <p>
+                          <a href="https://juhokim.com/files/JuhoKim-CV.pdf" class="social-link">
+                            Curriculum Vitae (PDF)
+                          </a>
+                        </p> -->
+                        <p>
+                          <a href="mailto:sidongfeng@cuhk.edu.cn" class="social-link">sidongfeng [at] cuhk.edu.cn</a>
+                        </p>
+                        <p>
+                          <!-- N1 Room 605, KAIST<br /> -->
+                          2001 Longxiang Boulevard<br />
+                          Shenzhen, China
+                        </p>
+                      </div>
+
+                      <!-- Social Media Icons -->
+                      <div class="social-icons mb-6">
+
+                        <a
+                          href="https://twitter.com/FSidong"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="social-icon twitter"
+                          title="X (formerly Twitter)"
+                        >
+                          <svg width="20" height="20" fill="currentColor" viewbox="0 0 24 24">
+                            <path
+                              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                            ></path>
+                          </svg>
+                        </a>
+
+                        <a
+                          href="https://scholar.google.com/citations?user=rGaW26gAAAAJ&hl=en"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="social-icon google-scholar"
+                          title="Google Scholar"
+                        >
+                          <svg width="20" height="20" fill="currentColor" viewbox="0 0 24 24">
+                            <path
+                              d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"
+                            ></path>
+                          </svg>
+                        </a>
+
+                        <a
+                          href="https://au.linkedin.com/in/sidong-feng-5410a2174"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="social-icon linkedin"
+                          title="LinkedIn"
+                        >
+                          <svg width="20" height="20" fill="currentColor" viewbox="0 0 24 24">
+                            <path
+                              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+
+                      <!-- Lab/Dept logos at bottom -->
+                      <!-- <div class="border-t border-gray-200 pt-6">
+                        <div class="space-y-4">
+                          <a
+                            href="https://kixlab.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="sidebar-logo-link"
+                          >
+                            <img
+                              src="_astro/KIXLAB_full_light_hr_nobg.wanGSkUK_Z3VnHw.webp"
+                              alt="KIXLAB"
+                              loading="lazy"
+                              sizes="128px"
+                              decoding="async"
+                              fetchpriority="auto"
+                              width="256"
+                              height="104"
+                              class="mx-auto max-w-[128px]"
+                            />
+                          </a>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="lg:col-span-8 mt-8 main-content-align">
+              <!-- Clean Bio section -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="prose prose-lg max-w-none space-y-6">
+                  <p>
+                    Sidong Feng is an Assistant Professor in the
+                    <a href="https://sds.cuhk.edu.cn/en" target="_blank" rel="noopener noreferrer">
+                      School of Data Science
+                    </a>
+                    at the Chinese University of Hong Kong (Shenzhen). I obtained my Ph.D. from 
+                    <a href="https://www.monash.edu/" target="_blank" rel="noopener noreferrer">
+                      Monash University
+                    </a>, and B.S. from 
+                    <a href="https://www.anu.edu.au/" target="_blank" rel="noopener noreferrer">
+                      The Australian National University
+                    </a>.
+                    I was a visiting scholar at the 
+                    <a href="https://www.cs.cit.tum.de/en/seai" target="_blank" rel="noopener noreferrer">
+                      Chair of Software Engineering & AI
+                    </a>
+                     at the Technical University of Munich.
+                  </p>
+
+                  <!-- <p>
+                    My research lies in the intersection of <strong>Software Engineering</strong> (SE) and
+                    <strong>Human–Computer Interaction</strong> (HCI), focusing on the use of <strong>AI</strong>
+                    and <strong>Large Language Models</strong> (LLMs) to enable intelligent software design, 
+                    development, testing, and maintenance. I always strive to conduct research that has a significant
+                    impact on both academia and industry. 
+                  </p> -->
+                  <p>
+                    Software is a human-centric endeavor: created by designers, developers, and testers to
+                    ultimately serve and empower the end user. In this ecosystem, AI acts as a powerful collaborator,
+                    augmenting both the engineering process and the user experience. Driven by this philosophy, 
+                    Sidong directs the <strong>Software, Human & AI Engineering Lab (SHAEL)</strong>, which
+                    focuses on the intersection of <strong>Software Engineering</strong> (SE) and 
+                    <strong>Human–Computer Interaction</strong> (HCI), by using <strong>AI</strong> and 
+                    <strong>Large Language Models</strong> (LLMs) to pioneer intelligent approaches to software design, 
+                    development, testing, and maintenance. 
+                    <!-- By bridging these disciplines, I strive to conduct research that delivers a transformative impact on both academic theory and industrial practice. -->
+                  </p>
+                </div>
+              </div>
+
+              <!-- Guide to Visitors Section -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="prose prose-lg max-w-none space-y-4 -mt-2">
+                  <div>
+                    <p class="mb-2"><strong>Interested in working with me?</strong></p>
+                    <p>
+                      I am always looking for self-motivated PhD students with full scholarship, master of 
+                      philosophy students, post-doctoral researchers, interns, and research assistants.
+                      If you're interested in joining our lab, visit the
+                      <a href="join.html" class="text-link hover:text-link-hover font-medium">
+                         Join Us 
+                      </a>
+                      page for details.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="mb-2"><strong>Want to learn about my research?</strong></p>
+                    <p>
+                      Check out my 
+                      <a href="#recent_pub" class="text-link hover:text-link-hover font-medium">
+                        recent publications
+                      </a>
+                      and past publications in the 
+                      <a href="publications.html" class="text-link hover:text-link-hover font-medium">
+                        publications page
+                      </a>
+                      .
+                    </p>
+                  </div>
+
+                  <!-- <div>
+                    <p class="mb-2"><strong>Want to meet or collaborate?</strong></p>
+                    <p>
+                      Check my
+                      <a href="schedule.html" class="text-link hover:text-link-hover font-medium">
+                        schedule page
+                      </a>
+                      to see when I'm available, or
+                      <a href="mailto:juhokim@kaist.ac.kr" class="text-link hover:text-link-hover font-medium">
+                        send me an email
+                      </a>
+                      .
+                    </p>
+                  </div> -->
+                </div>
+              </div>
+
+              
+
+              <!-- News Section -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="flex items-center justify-between mb-4">
+                  <h2 class="text-xl font-bold" style="color: var(--color-primary)">News</h2>
+                  <a href="news.html" class="text-sm see-all-link" style="color: var(--color-primary)">
+                    See All &rarr;
+                  </a>
+                </div>
+
+                <div class="space-y-1">
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026.03</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        I was received the <strong>Gemini Academic Program Award</strong> from Google Cloud!
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026.03</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        Our paper "ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models"
+                        is accepted to <strong>FSE 2026</strong>!
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.11</div>
+                    <div class="flex-1 text-sm">
+                      I was awarded 
+                      <a
+                        href="https://www.amazon.science/research-areas/latest-news/63-amazon-research-award-recipients-announced-spring-2025"
+                        class="text-link hover:text-link-hover transition-colors"
+                        target="_blank"
+                      >
+                      Amazon Research Award
+                      </a>
+                      !
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.11</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        I was awarded <strong>Distinguished Reviewer</strong> in ASE 2025!
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.10</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        I was awarded <strong>2025 Dean’s Award for Excellence by a Graduate Research Student</strong> at Monash University!
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.07</div>
+                    <div class="flex-1 text-sm">
+                      We organize the 
+                      <a
+                        href="https://conf.researchr.org/home/icse-2026/uise-2026"
+                        class="text-link hover:text-link-hover transition-colors"
+                        target="_blank"
+                      >
+                      1st International Workshop on User Interface and Experience for Software Engineering (UISE)
+                      </a>
+                      co-located with ICSE 2026, please submit your paper :)
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.06</div>
+                    <div class="flex-1 text-sm">
+                      Our paper
+                      <a
+                        href="https://arxiv.org/abs/2506.17539"
+                        class="text-link hover:text-link-hover transition-colors"
+                        target="_blank"
+                      >
+                      "Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing"
+                      </a>
+                      is accepted to <strong>ICSE 2026</strong>!
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.04</div>
+                    <div class="flex-1 text-sm">
+                      Release the first GUI Agent framework
+                      <a
+                        href="https://arxiv.org/pdf/2602.11514"
+                        class="text-link hover:text-link-hover transition-colors"
+                        target="_blank"
+                      >
+                      Autonomous GUI Automation Levels
+                      </a>
+                      !
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.02</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        Invited as reviewer for <strong>Nature Communications</strong>.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.02</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text">
+                        I was awarded <strong>Monash FIT Supplementary Funding Scheme</strong>.
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Awards -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="flex items-center justify-between mb-4">
+                  <h2 class="text-xl font-bold" style="color: var(--color-primary)">Awards</h2>
+                </div>
+
+                <div class="space-y-1">
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2026</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Gemini Academic Program Award
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-semibold text-text">
+                        <a
+                        href="https://www.amazon.science/research-areas/latest-news/63-amazon-research-award-recipients-announced-spring-2025"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-link hover:text-link-hover transition-colors"
+                        >
+                        Amazon Research Award
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Distinguished Reviewer in ASE 2025
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Monash FIT Dean's Award for Excellence by a Graduate Research Student
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Monash FIT Supplementary Funding Scheme
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Google Conference Scholarship
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2023</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        ACM SIGSOFT Distinguished Paper Award in 
+                        <a href="https://arxiv.org/pdf/2212.05203.pdf" class="text-link hover:text-link-hover transition-colors" target="_blank" rel="noopener noreferrer">
+                          ICSE 2023
+                        </a>.
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2021</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Highlight of 
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3397481.3450671" class="text-link hover:text-link-hover transition-colors" target="_blank" rel="noopener noreferrer">
+                          IUI 2021
+                        </a>.
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2021</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Monash HDR Full Scholarship
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2021</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Selected PhD for 
+                        <a href="https://www.monash.edu/it/events/2021/international-school-in-artificial-intelligence-and-its-applications-in-computer-science-isaac" class="text-link hover:text-link-hover transition-colors" target="_blank" rel="noopener noreferrer">
+                          ISAAC
+                        </a> (Fully Funded)
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2021</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-medium text-text">
+                        Selected Engineers Australia (EA) for graduates from ANU
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Publications -->
+              <div id="recent_pub" class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="flex items-center justify-between mb-4">
+                  <h2 class="text-xl font-bold" style="color: var(--color-primary)">Selected Recent Publications</h2>
+                  <a href="publications.html" class="text-sm see-all-link" style="color: var(--color-primary)">
+                    See All &rarr;
+                  </a>
+                </div>
+
+                <div class="space-y-1">
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">FSE-26</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models
+                      </span>
+                      <br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Dingbang Wang, Nikola Tomic, Tingting Yu, Aldeida Aleti, Chunyang Chen
+                      </i>
+                      <br>
+                      
+                      <span class="font-small text-text">
+                        &bull;
+                        <a
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-link hover:text-link-hover transition-colors"
+                        >
+                          PDF
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">ICSE-26</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing
+                      </span>
+                      <br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Changhao Du, Huaxiao Liu, Qingnan Wang, Zhengwei Lv, Mengfei Wang, Chunyang Chen
+                      </i>
+                      <br>
+                      
+                      <span class="font-small text-text">
+                        &bull;
+                        <a
+                          href="https://arxiv.org/abs/2506.17539"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-link hover:text-link-hover transition-colors"
+                        >
+                          PDF
+                        </a>
+                        &bull; 
+                        <span style="color:rgb(237, 27, 44)">Acceptance rate: 9.2% (60/646)</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">Blog</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        How Smart Is Your GUI Agent? A Framework for the Future of Software Interaction
+                      </span><br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Chunyang Chen
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/pdf/2602.11514" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">Blog</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">TOCHI-25</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Towards Human-AI Synergy in UI Design: Supporting Iterative Generation with LLMs
+                      </span><br>
+                      <i class="text-text font-small">
+                        Mingyue Yuan, Jieshan Chen, Yongquan Hu, <u>Sidong Feng</u>, Mulong Xie, Gelareh Mohammadi, Zhenchang Xing, Aaron Quigley
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/abs/2412.20071" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">ICSE-25 Industry</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Agent for User: Testing Multi-User Interactive Features in TikTok
+                      </span><br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Changhao Du, Huaxiao Liu, Qingnan Wang, Zhengwei Lv, Gang Huo, Xu Yang, Chunyang Chen
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/abs/2504.15474" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">MSR-25</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        An Empirical Study on Leveraging Images in Automated Bug Report Reproduction
+                      </span><br>
+                      <i class="text-text font-small">
+                        Dingbang Wang, Zhaoxu Zhang, <u>Sidong Feng</u>, William G.J. Halfond, Tingting Yu
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/abs/2502.15099" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">ASE-24 Industry</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat
+                      </span><br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Haochuan Lu, Jianqin Jiang, Ting Xiong, Likun Huang, Yinglin Liang, Xiaoqin Li, Yuetang Deng, Aldeida Aleti
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/pdf/2409.07829" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">ISSTA-24</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps
+                      </span><br>
+                      <i class="text-text font-small">
+                        Dingbang Wang, Yu Zhao, <u>Sidong Feng</u>, Zhaoxu Zhang, William GJ Halfond, Chunyang Chen, Xiaoxia Sun, Jiangfan Shi, Tingting Yu
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/pdf/2407.05165" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">CHI-24</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling
+                      </span><br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Suyu Ma, Han Wang, David Kong, Chunyang Chen
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="https://github.com/sidongfeng/MUD" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">Dataset</a>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 py-2">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">ICSE-24</div>
+                    <div class="flex-1 text-sm">
+                      <span class="text-text font-semibold">
+                        Prompting Is All You Need: Automated Android Bug Replay with Large Language Models
+                      </span><br>
+                      <i class="text-text font-small">
+                        <u>Sidong Feng</u>, Chunyang Chen
+                      </i><br>
+                      <span class="font-small text-text">
+                        &bull;
+                        <a href="https://arxiv.org/pdf/2306.01987.pdf" target="_blank" rel="noopener noreferrer" class="text-link hover:text-link-hover transition-colors">PDF</a>
+                        &bull; 
+                        <span style="color:rgb(237, 27, 44)">Acceptance rate: 6.6%</span>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Travel & Talks Section -->
+              <!-- <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <div class="flex items-center justify-between mb-4">
+                  <h2 class="text-xl font-bold" style="color: var(--color-primary)">Travel &amp; Talks</h2>
+                  <a href="travel.html" class="text-sm see-all-link" style="color: var(--color-primary)">
+                    See All &rarr;
+                  </a>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex flex-col sm:flex-row gap-4 py-2 border-b border-gray-200 last:border-b-0">
+                    <div class="flex-shrink-0 text-sm font-medium text-text-light sm:w-32">2025.12.04</div>
+                    <div class="flex-1 text-sm">
+                      <span class="font-semibold text-text">
+                        <a
+                          href="https://www.dongaforum.com/ai_agent/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-link hover:text-link-hover transition-colors"
+                        >
+                          Dong-a Business Forum (AI Agent Innovation Forum)
+                        </a>
+                      </span>
+                      <span class="text-text font-medium">&bull; Invited Speaker</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div> -->
+
+              <!-- Academic Services Section -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <h2 class="text-xl font-bold mb-3" style="color: var(--color-primary)">
+                  Academic Services
+                </h2>
+
+                <div class="text-sm text-text space-y-1">
+                  <p class="font-semibold">
+                    Organizer:
+                  </p>
+                  <p class>&bull; 1st International Workshop on User Interface and Experience for Software Engineering (UISE)</p>
+                  
+                  <p class="font-semibold">
+                    Program Committee and Associate Chair:
+                  </p>
+                  <p class>&bull; International Conference on Software Engineering (ICSE Shadow’25, Artifact’25)</p>
+                  <p class>&bull; IEEE/ACM International Conference on Automated Software Engineering (ASE Industry'24, ASE'25, ASE'26)</p>
+                  <p class>&bull; ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA Artifact’24, Artifact’25)</p>
+                  <p class>&bull; ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW Poster’24)</p>
+                  <p class>&bull; ACM Conference on Intelligent User Interfaces (IUI'26)</p>
+                  <p class>&bull; Mining Software Repositories (MSR Senior PC'24)</p>
+                  <p class>&bull; IEEE International Conference on Software Testing, Verification and Validation (ICST'25)</p>
+                  <p class>&bull; ACM International Conference on AI Foundation Models and Software Engineering (FORGE'26)</p>
+                  <p class>&bull; International Conference on Mobile Software Engineering and Systems (MobileSoft'24)</p>
+                  <p class>&bull; International Conference on Neural Information Processing (ICONIP'23)</p>
+                  <p class>&bull; Workshop on EXPlainable and REliable Software Systems (EXPRESS 2025 co-located in ISSTA)</p>
+                  <p class>&bull; Workshop on Human-Centric Software Engineering and Cyber Security (HCSE-CS 2023 co-located in ASE)</p>
+
+                  <p class="font-semibold">
+                    Reviewer:
+                  </p>
+                  <p class>&bull; Nature Communications</p>
+                  <p class>&bull; Elsevier Book</p>
+                  <p class>&bull; IEEE Transactions on Neural Networks and Learning System (TNNLS)</p>
+                  <p class>&bull; IEEE Transactions on Software Engineering (TSE)</p>
+                  <p class>&bull; ACM Transactions on Software Engineering and Methodology (TOSEM)</p>
+                  <p class>&bull; Engineering Applications of Artificial Intelligence (EAAI)</p>
+                  <p class>&bull; Journal of Systems and Software (JSS)</p>
+                  <p class>&bull; ACM CHI Conference on Human Factors in Computing Systems (CHI'23, CHI'24, CHI'25, CHI'26)</p>
+                  <p class>&bull; ACM Symposium on User Interface Software and Technology (UIST'23)</p>
+                  <p class>&bull; ACM Conference on Intelligent User Interfaces (IUI'23, IUI'24, IUI'25)</p>
+                  <p class>&bull; IEEE International Symposium on Software Reliability Engineering (ISSRE'24)</p>
+                  <p class>&bull; ACM International Conference on Mobile Human-Computer Interaction (MobileHCI'22)</p>
+
+                </div>
+              </div>
+
+              <!-- Teaching Section -->
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 mb-3">
+                <h2 class="text-xl font-bold mb-3" style="color: var(--color-primary)">Teaching</h2>
+
+                <div class="text-sm text-text space-y-1">
+                  <p>
+                    &bull; Fall 2025
+                    <a
+                      href="https://www.cs.cit.tum.de/en/seai"
+                      class="social-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      [IN2107] Graphical User Interfaces
+                    </a>
+                  </p>
+                  <p>
+                    &bull; Spring 2025
+                    <a
+                      href="https://www.cs.cit.tum.de/en/seai"
+                      class="social-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      [IN2106] Development of LLM-driven GUI Agents
+                    </a>
+                  </p>
+                  <p>
+                    &bull; Fall 2024
+                    <a
+                      href="https://www.cs.cit.tum.de/en/seai"
+                      class="social-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      [INHN4010] Automated mobile app testing
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-gray-50 mt-20">
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <div class="text-center text-sm text-gray-600">
+            <p>
+              &copy; 2026 Sidong Feng. Built with <a href="https://astro.build">Astro</a>.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Sidong Feng</h1>
-      <div class="hero-sub">PhD student @ Monash University</div>
-      <p>I'm interested in <span class="typed" data-typed-items="Software Engineering, Human–computer Interaction"></span></p>
-    </div>
-  </section><!-- End Hero -->
+    <script type="module">
+      (async () => {
+        try {
+          if (!("serviceWorker" in navigator)) return;
+          const e = await navigator.serviceWorker.getRegistrations();
+          if (
+            e.length &&
+            (await Promise.all(e.map((n) => n.unregister())),
+            "caches" in window)
+          ) {
+            const n = await caches.keys();
+            await Promise.all(n.map((t) => caches.delete(t)));
+          }
+          sessionStorage.getItem("sw-cleanup-done") ||
+            (sessionStorage.setItem("sw-cleanup-done", "1"), location.reload());
+        } catch {}
+      })();
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>I am a PhD student in the Faculty of Information Technology at Monash University, working with Prof. <a href="https://chunyang-chen.github.io/" target="_blank">Chunyang Chen</a>, Prof. <a href="https://users.monash.edu.au/~aldeidaa/" target="_blank">Aldeida Aleti</a>, Prof. <a href="https://research.monash.edu/en/persons/yuan-fang-li" target="_blank">Yuan-Fang Li</a>, and Prof. <a href="https://bohanzhuang.github.io/" target="_blank">Bohan Zhuang</a>. 
-            My research interests lie at the intersection of Software Engineering, Human-Computer Interaction, and Large Language Models. 
-            I received my Bachelor’s degree in Software Engineering from the Australian National University in Australia, advised by Prof. <a href="https://cecs.anu.edu.au/people/zhenchang-xing" target="_blank">Zhenchang Xing</a>.
-            My current research focus is software testing and human-AI interaction including the following four directions.</p>
-        </div>
-
-        <div class="content" data-aos="fade-left">
-            <h3>Research Interest</h3>
-            <div class="row">
-              <div>
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i><strong>App Design</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>App Development</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>App Testing</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>LLM-relevant works</strong></li>
-                </ul>
-                <!-- <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>App Design</strong> <span>[<a href="./papers/designGallery_CSCW19.pdf" target="_blank">CSCW'19</a>, <a href="https://arxiv.org/abs/2008.06895" target="_blank">CSCW'20</a>, <a href="https://arxiv.org/pdf/2312.07755.pdf" target="_blank">CHI'24 workshop</a>]</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>App Development</strong> <span>[<a href="./papers/icon_IUI21.pdf" target="_blank">IUI'21</a>, <a href="https://dl.acm.org/doi/pdf/10.1145/3531065" target="_blank">TIIS'22</a>, 
-                    <a href="https://arxiv.org/pdf/2308.03252.pdf" target="_blank">UIST'23a</a>, 
-                    <a href="https://arxiv.org/pdf/2308.05898.pdf" target="_blank">UIST'23b</a>,
-                    <a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350" target="_blank">CHI'24</a>]</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>App Testing</strong> <span>[<a href="./papers/uied.pdf" target="_blank">FSE'20</a>, 
-                    <a href="https://arxiv.org/abs/2112.04128" class="post-title" target="_blank">ICSE'22</a>, 
-                    <a href="https://arxiv.org/pdf/2206.10352.pdf" target="_blank">ESEC/FSE'22</a>, 
-                    <a href="https://arxiv.org/pdf/2212.05203.pdf" target="_blank">ICSE'23a</a>,
-                    <a href="https://arxiv.org/pdf/2302.00886.pdf" target="_blank">ICSE'23b</a>,
-                    <a href="https://arxiv.org/pdf/2308.06657.pdf" target="_blank">ESEC/FSE'23 Industry</a>,
-                    <a href="https://arxiv.org/pdf/2306.01987.pdf" target="_blank">ICSE'24</a>,
-                    <a href="https://arxiv.org/pdf/2407.05165" target="_blank">ISSTA'24</a>,
-                    <a href="https://arxiv.org/pdf/2409.07829" target="_blank">ASE'24 Industry</a>]</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>LLM-relevant works</strong> <span>[bug replay (<a href="https://arxiv.org/pdf/2306.01987.pdf" target="_blank">ICSE'24</a>, <a href="https://arxiv.org/pdf/2407.05165" target="_blank">ISSTA'24</a>), app exploration (<a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350" target="_blank">CHI'24</a>, <a href="https://arxiv.org/pdf/2409.07829" target="_blank">ASE'24 Industry</a>), UI design (<a href="https://arxiv.org/pdf/2312.07755.pdf" target="_blank">CHI'24 workshop</a>)]</span></li>
-                </ul> -->
-              </div>
-            </div>
-            <!-- <div class="cv_button"><a href="./resume/resume-source/Resumev9.pdf" target="_blank" >Download CV </a>(Updated: Oct, 2024)</div> -->
-          </div>
-          
-      </div>
-    </section><!-- End About Section -->
-
-    
-
-    <!-- ======= News Section ======= -->
-    <section id="news" class="news section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>News</h2>
-          <div data-aos="fade-up">
-            <ul>
-              <li>[Mar 2026] Our paper "ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models" is accepted to <b>FSE 2026!</b></li>
-              <li>[Nov 2025] I was awarded <b><a href="https://www.amazon.science/research-areas/latest-news/63-amazon-research-award-recipients-announced-spring-2025" target="_blank">Amazon Research Award</a></b>!</li>
-              <li>[Nov 2025] I was awarded <b>Distinguished Reviewer</b> in ASE 2025!</li>
-              <li>[Oct 2025] I was awarded <b>2025 Dean’s Award for Excellence by a Graduate Research Student</b> at Monash University!</li>
-              <li>[Jul 2025] We organize the 1st International Workshop on User Interface and Experience for Software Engineering (<b><a href="https://uise-workshop.github.io/2026/" target="_blank">UISE 2026</a></b>) co-located with ICSE 2026, please submit your paper :)</li>
-              <li>[Jun 2025] Our paper "Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing" is accepted to <b>ICSE 2026!</b></li>
-              <!-- <li>[Jun 2025] Invited as Program Committee for <b>ASE 2025</b></li> -->
-              <li>[Apr 2025] Release the first GUI Agent framework <a href="https://medium.com/@charliefeng1996/how-smart-is-your-gui-agent-89b1d6c0fe92" target="_blank">Autonomous GUI Automation Levels</a></li>
-              <li>[Feb 2025] Invited as reviewer for <b>Nature Communications</b></li>
-              <li>[Feb 2025] I was awarded <b>Monash FIT Supplementary Funding Scheme</b></li>
-              <!-- <li>[Jan 2025] I was awarded <b>Google Conference Scholarship!</b></li> -->
-              <!-- <li>[Dec 2024] Our paper "Agent for User: Testing Multi-User Interactive Features in TikTok" is accepted to <b>ICSE Industry 2025!</b></li> -->
-              <!-- <li>[Dec 2024] Our paper "An Empirical Study on Leveraging Images in Automated Bug Report Reproduction" is accepted to <b>MSR 2025!</b></li> -->
-              <!-- <li>[Oct 2024] I will teach my first seminar course "<a href="https://www.cs.cit.tum.de/seai/team/sidong-feng/" target="_blank">Automated Mobile App Testing</a>" at TUM.</li> -->
-              <!-- <li>[Aug 2024] Our paper "Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat" is accepted to <b>ASE 2024 Industry!</b></li> -->
-              <!-- <li>[Jul 2024] Our paper "Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps" is accepted to <b>ISSTA 2024!</b></li> -->
-              <!-- <li>[Jan 2024] Our paper "MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling" is accepted to <b>CHI 2024!</b></li> -->
-              <!-- <li>[Aug 2023] Our paper "Towards Efficient Record and Replay: A Case Study in WeChat" is accepted to <b>ESEC/FSE 2023 Industry!</b></li> -->
-              <!-- <li>[Aug 2023] Two paper are accepted to <b>UIST 2023!</b></li> -->
-              <!-- <li>[Jun 2023] Our paper "Prompting Is All You Need: Automated Android Bug Replay with Large Language Models" is accepted to <b>ICSE 2024 (acceptance: 6.6%)!</b></li>
-              <li>[Feb 2023] Our paper "Efficiency Matters: Speeding Up Automated Testing with GUI Rendering Inference" wins <b>ACM SIGSOFT Distinguished Paper Award</b> in ICSE 2023!</li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section><!-- End News Section -->
-
-    <!-- ======= Awards Section ======= -->
-    <section id="awards" class="awards">
-      <div class="container">
-        <div class="section-title">
-          <h2>Awards</h2>
-          <div data-aos="fade-up">
-            <ul>
-              <li>[2025] Amazon Research Award</li>
-              <li>[2025] Distinguished Reviewer in ASE 2025</li>
-              <li>[2025] Monash FIT Dean's Award for Excellence by a Graduate Research Student</li>
-              <li>[2025] Monash FIT Supplementary Funding Scheme</li>
-              <li>[2025] Google Conference Scholarship</li>
-              <!-- <li>[2024] Lab Visiting to Hong Kong University of Science and Technology, China (AP. <a href="https://personal.hkust-gz.edu.cn/ding/" target="_blank">Zishuo Ding</a>)</li>
-              <li>[2024] Lab Visiting Scholar to Technical University of Munich, Germany (Prof. <a href="https://chunyang-chen.github.io/" target="_blank">Chunyang Chen</a>)</li>
-              <li>[2023] Lab Visiting Scholar to University of Alberta, Canada (Prof. <a href="https://www.malei.org/" target="_blank">Lei Ma</a>)</li> -->
-              <li>[2023] ACM SIGSOFT Distinguished Paper Award in ICSE 2023.</li>
-              <li>[2021] Highlight of IUI 2021.</li>
-              <li>[2021] Monash HDR Full Scholarship</li>
-              <li>[2021] Selected PhD for <a href="https://www.monash.edu/it/events/2021/international-school-in-artificial-intelligence-and-its-applications-in-computer-science-isaac" class="post-title" target="_blank">ISAAC</a> (Fully Funded)</li>
-              <li>[2021] Selected Engineers Australia (EA) for graduates from ANU</li>
-              <li>[2020] Selected Alibaba Global Talent Development Program</li>
-              <li>[2016] Top 1 graduation from Blue Mountains Grammar High School, Australia</li>
-              <!-- <li>[2020] 1st solution in Huawei AI project of Smart City (with $120,000 project investment)</li> -->
-              <!-- <li>[2019] Two papers (CSCW'2019, CSCW'2020) were accepted from my undergraduate thesis</li> -->
-              <!-- <li>[2019] Top 5% graduation at Australian National University</li> -->
-              <!-- <li>[2018] Top 5 Award in Innovation ACT 2018 (with $8,750 grant)</li>
-              <li>[2018] A primary intent of cooperation with the Queanbeyan council, NSW, Australia</li>
-              <li>[2018] 'Start-up of the Year' award in the Digital Canberra iAwards</li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section><!-- End News Section -->
-
-    <!-- ======= Research Section ======= -->
-    <section id="research" class="research section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Research</h2>
-          <div data-aos="fade-up">
-            <div class="pub-item">
-              <h6 class="fg-theme">27. [FSE'26] <b>ViBR: Automated Bug Replay from Video-based Reports Using Vision-Language Models</b></h6>
-              <p><u>Sidong Feng</u>, Dingbang Wang, Nikola Tomic, Tingting Yu, Aldeida Aleti, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">26. [ICSE'26 workshop] <b>International Workshop on User Interface and Experience for Software Engineering (UISE 2026)</b></h6>
-              <p><u>Sidong Feng</u>, Kevin Moran, Tingting Yu, Sam Malek, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://uise-workshop.github.io/2026/" target="_blank">Call for Paper</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">25. [ICSE'26] <b>Breaking Single-Tester Limits: Multi-Agent LLMs for Multi-User Feature Testing</b></h6>
-              <p><u>Sidong Feng</u>, Changhao Du, Huaxiao Liu, Qingnan Wang, Zhengwei Lv, Mengfei Wang, Chunyang Chen</p>
-              <p style="color:rgb(237, 27, 44)">Acceptance rate: 9.2% (60/646)</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2506.17539" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">24. [Blog] <b>How Smart Is Your GUI Agent? A Framework for the Future of Software Interaction</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen, Mulong Xie</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://medium.com/@charliefeng1996/how-smart-is-your-gui-agent-89b1d6c0fe92" target="_blank">Blog</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">23. [TOCHI'25] <b>Towards Human-AI Synergy in UI Design: Supporting Iterative Generation with LLMs</b></h6>
-              <p>Mingyue Yuan, Jieshan Chen, Yongquan Hu, <u>Sidong Feng</u>, Mulong Xie, Gelareh Mohammadi, Zhenchang Xing, Aaron Quigley</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2412.20071" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">22. [ICSE'25 Industry] <b>Agent for User: Testing Multi-User Interactive Features in TikTok</b></h6>
-              <p><u>Sidong Feng</u>, Changhao Du, Huaxiao Liu, Qingnan Wang, Zhengwei Lv, Gang Huo, Xu Yang, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2504.15474" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">21. [MSR'25] <b>An Empirical Study on Leveraging Images in Automated Bug Report Reproduction</b></h6>
-              <p>Dingbang Wang, Zhaoxu Zhang, <u>Sidong Feng</u>, William G.J. Halfond, Tingting Yu</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2502.15099" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">20. [ASE'24 Industry] <b>Enabling Cost-Effective UI Automation Testing with Retrieval-Based LLMs: A Case Study in WeChat</b></h6>
-              <p><u>Sidong Feng</u>, Haochuan Lu, Jianqin Jiang, Ting Xiong, Likun Huang, Yinglin Liang, Xiaoqin Li, Yuetang Deng, Aldeida Aleti</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2409.07829" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">19. [ISSTA'24] <b>Feedback-Driven Automated Whole Bug Report Reproduction for Android Apps</b></h6>
-              <p>Dingbang Wang, Yu Zhao, <u>Sidong Feng</u>, Zhaoxu Zhang, William GJ Halfond, Chunyang Chen, Xiaoxia Sun, Jiangfan Shi, Tingting Yu</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2407.05165" target="_blank">PDF</a></div>
-              </div>
-            </div>
-            
-            <div class="pub-item">
-              <h6 class="fg-theme">18. [CHI'24] <b>MUD: Towards a Large-Scale and Noise-Filtered UI Dataset for Modern Style UI Modeling</b></h6>
-              <p><u>Sidong Feng</u>, Suyu Ma, Han Wang, David Kong, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642350" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/sidongfeng/MUD" target="_blank">Dataset</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">17. [CHI'24] UI Workshop <b>Designing with Language: Wireframing UI Design Intent with Generative Large Language Models</b></h6>
-              <p><u>Sidong Feng</u>, Mingyue Yuan, Jieshan Chen, Zhenchang Xing, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2312.07755.pdf" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">16. [ICSE'24] <b>Prompting Is All You Need: Automated Android Bug Replay with Large Language Models</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen</p>
-              <p style="color:rgb(237, 27, 44)">Acceptance rate: 6.6%</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2306.01987.pdf" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">15. [ESEC/FSE'23 Industry] <b>Towards Efficient Record and Replay: A Case Study in WeChat</b></h6>
-              <p><u>Sidong Feng</u>, Haochuan Lu, Ting Xiong, Yuetang Deng, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2308.06657.pdf" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">14. [UIST'23a] <b>Video2Action: Reducing Human Interactions in Action Annotation of App Tutorial Videos</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen, Zhenchang Xing</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2308.03252.pdf" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">13. [UIST'23b] <b>Unveiling the tricks: Automated Detection of Dark Pattern in Mobile Applications</b></h6>
-              <p>Jieshan Chen, Jiamou Sun, <u>Sidong Feng</u>, Zhenchang Xing, Qinghua Lu, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2308.05898.pdf" target="_blank">PDF</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">12. [ICSE'23a] <b>Efficiency Matters: Speeding Up Automated Testing with GUI Rendering Inference</b></h6>
-              <p><u>Sidong Feng</u>, Mulong Xie, Chunyang Chen</p>
-              <p style="color:rgb(237, 27, 44)">ACM SIGSOFT Distinguished Paper Award (10/796)</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2212.05203.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/sidongfeng/AdaT" target="_blank">Code</a></div>
-              </div>
-            </div>
-            
-            <div class="pub-item">
-              <h6 class="fg-theme">11. [ICSE'23b] <b>Read It, Don't Watch It: Captioning Bug Recordings Automatically</b></h6>
-              <p><u>Sidong Feng</u>, Mulong Xie, Yinxing Xue, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2302.00886.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/sidongfeng/CAPdroid" target="_blank">Code</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">10. [ESEC/FSE'22] <b>Psychologically-Inspired, Unsupervised Inference of Perceptual Groups of GUI Widgets from GUI Images</b></h6>
-              <p>Mulong Xie, Zhenchang Xing, <u>Sidong Feng</u>, Chunyang Chen, Liming Zhu, Xiwei Xu</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/pdf/2206.10352.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/MulongXie/GUI-Perceptual-Grouping" target="_blank">Code</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">9. [ICSE'22] <b>GIFdroid: Automated Replay of Visual Bug Reports for Android Apps</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2112.04128" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/gifdroid/gifdroid" target="_blank">Code</a></div>
-                <div class="floating-button"><a href="https://youtu.be/G0Zytwpsabk" target="_blank">Video</a></div>
-                <div class="floating-button"><a href="https://youtu.be/3n4Ym0K_mHc" target="_blank">Presentation</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">8. [ICSE-C'22a] <b>GIFdroid: An Automated Light-weight Tool for Replaying Visual Bug Reports</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="./papers/Gifdroid_tool.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/gifdroid/gifdroid" target="_blank">Code</a></div>
-                <div class="floating-button"><a href="https://youtu.be/G0Zytwpsabk" target="_blank">Video</a></div>
-                <div class="floating-button"><a href="https://youtu.be/3n4Ym0K_mHc" target="_blank">Presentation</a></div>
-              </div>
-            </div>
-            
-            <div class="pub-item">
-              <h6 class="fg-theme">7. [ICSE-C'22b] <b>Gallery D.C.: Auto-created GUI Component Gallery for Design Search and Knowledge Discovery</b></h6>
-              <p><u>Sidong Feng</u>, Chunyang Chen, Zhenchang Xing</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2204.06700" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="http://mui-collection.herokuapp.com/" target="_blank">Tool</a></div>
-                <div class="floating-button"><a href="https://youtu.be/zVmsz_wY5OQ" target="_blank">Video</a></div>
-              </div>
-            </div>
-            
-            <div class="pub-item">
-              <h6 class="fg-theme">6. [TIIS'22] <b>Auto-Icon+: An Automated End-to-End Code Generation Tool for Icon Designs in UI Development</b></h6>
-              <p><u>Sidong Feng</u>, Minmin Jiang, TingTing Zhou, Yankun Zhen, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://dl.acm.org/doi/pdf/10.1145/3531065" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://www.imgcook.com/" target="_blank">Tool</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">5. [IUI'21] <b>Auto-icon: An automated code generation tool for icon designs assisting in ui development</b></h6>
-              <p><u>Sidong Feng</u>, Suyu Ma, Jinzhong Yu, Chunyang Chen, TingTing Zhou, Yankun Zhen</p>
-              <p style="color:rgb(237, 27, 44)">Highlight of IUI 2021 (11/241)</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="./papers/icon_IUI21.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://www.imgcook.com/" target="_blank">Tool</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">4. [CSCW'20] <b>From lost to found: Discover missing ui design semantics through recovering missing tags</b></h6>
-              <p>Chunyang Chen, <u>Sidong Feng</u>, Zhengyang Liu, Zhenchang Xing, Shengdong Zhao</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://arxiv.org/abs/2008.06895" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="https://github.com/UITagPrediction/CSCW2020" target="_blank">Code</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">3. [ESEC/FSE'20] <b>UIED: a hybrid tool for GUI element detection</b></h6>
-              <p>Mulong Xie, <u>Sidong Feng</u>, Zhenchang Xing, Jieshan Chen, Chunyang Chen</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="https://www.researchgate.net/profile/Mulong-Xie/publication/346170544_UIED_a_hybrid_tool_for_GUI_element_detection/links/5fbca13a458515b797641b72/UIED-a-hybrid-tool-for-GUI-element-detection.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="http://uied.online/" target="_blank">Tool</a></div>
-                <div class="floating-button"><a href="https://github.com/MulongXie/UIED" target="_blank">Code</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">2. [CSCW'19] <b>Gallery D.C.: Design Search and Knowledge Discovery through Auto-created GUI Component Gallery</b></h6>
-              <p>Chunyang Chen, <u>Sidong Feng</u>, Zhenchang Xing, Linda Liu, Shendong Zhao, Jinshui Wang</p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="./papers/designGallery_CSCW19.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="http://mui-collection.herokuapp.com/" target="_blank">Tool</a></div>
-                <div class="floating-button"><a href="./papers/cscw2019gallery.pptx" target="_blank">Slides</a></div>
-                <div class="floating-button"><a href="https://medium.com/acm-cscw/gui-component-design-gallery-through-invisible-crowdsourcing-e53845b9f3fe" target="_blank">Blog</a></div>
-              </div>
-            </div>
-
-            <div class="pub-item">
-              <h6 class="fg-theme">1. [ICONIP'19] <b>Dynamic facial stress recognition in temporal convolutional network</b></h6>
-              <p><u>Sidong Feng</u></p>
-              <div class="pub-element">
-                <div class="floating-button"><a href="./papers/iconip2019.pdf" target="_blank">PDF</a></div>
-                <div class="floating-button"><a href="./papers/iconipposter.png" target="_blank">Poster</a></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section><!-- End Research Section -->
-
-    <!-- ======= News Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Services</h2>
-        </div>
-        <div class="content" data-aos="fade-left">
-          <h3>Organizer</h3>
-          <ul>
-            <li>1st International Workshop on User Interface and Experience for Software Engineering (UISE)</li>
-          </ul>
-          <h3>Program Committee and Associate Chair</h3>
-          <ul>
-            <li>International Conference on Software Engineering (ICSE Shadow’25, Artifact’25)</li>
-            <li>IEEE/ACM International Conference on Automated Software Engineering (ASE Industry'24, ASE'25, ASE'26)</li>
-            <li>ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA Artifact’24, Artifact’25)</li>
-            <li>ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW Poster’24)</li>
-            <li>ACM Conference on Intelligent User Interfaces (IUI'26)</li>
-            <li>Mining Software Repositories (MSR Senior PC'24)</li>
-            <li>IEEE International Conference on Software Testing, Verification and Validation (ICST'25)</li>
-            <li>ACM International Conference on AI Foundation Models and Software Engineering (FORGE'26)</li>
-            <li>International Conference on Mobile Software Engineering and Systems (MobileSoft'24)</li>
-            <li>International Conference on Neural Information Processing (ICONIP'23)</li>
-            <li>Workshop on EXPlainable and REliable Software Systems (EXPRESS 2025 co-located in ISSTA)</li>
-            <li>Workshop on Human-Centric Software Engineering and Cyber Security (HCSE-CS 2023 co-located in ASE)</li>
-          </ul>
-          <h3>Reviewer</h3>
-          <ul>
-            <li>Nature Communications</li>
-            <li>Elsevier Book</li>
-            <li>IEEE Transactions on Neural Networks and Learning System (TNNLS)</li>
-            <li>IEEE Transactions on Software Engineering (TSE)</li>
-            <li>ACM Transactions on Software Engineering and Methodology (TOSEM)</li>
-            <li>Engineering Applications of Artificial Intelligence (EAAI)</li>
-            <li>Journal of Systems and Software (JSS)</li>
-            <li>ACM CHI Conference on Human Factors in Computing Systems (CHI'23, CHI'24, CHI'25, CHI'26)</li>
-            <li>ACM Symposium on User Interface Software and Technology (UIST'23)</li>
-            <li>ACM Conference on Intelligent User Interfaces (IUI'23, IUI'24, IUI'25)</li>
-            <li>IEEE International Symposium on Software Reliability Engineering (ISSRE'24)</li>
-            <li>ACM International Conference on Mobile Human-Computer Interaction (MobileHCI'22)</li>
-          </ul>
-          <h3>Workshop/Discussion</h3>
-          <ul>
-            <li>Computational User Interface Workshop (CHI'24)</li>
-            <li>Foundation/Large Models on Software Engineering (FM+SE Vision 2030)</li>
-            <li>Inclusive Software Documentation Workshop</li>
-            <li>Session: ML in Practice, Session: Testing (ESEC/FSE'20)</li>
-          </ul>
-        </div>
-      </div>
-    </section><!-- End News Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Sidong Feng</span></strong>
-      </div>
-      <!-- <div class="credits"> -->
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-      <!-- </div> -->
-    </div>
-  </footer><!-- End  Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+      document.addEventListener("DOMContentLoaded", function () {
+        const e = document.querySelector(".mobile-menu-btn"),
+          n = document.getElementById("mobile-menu");
+        e &&
+          n &&
+          e.addEventListener("click", function () {
+            const t = !n.classList.contains("hidden");
+            n.classList.toggle("hidden"),
+              e.setAttribute("aria-expanded", !t);
+            const i = e.querySelector(".sr-only");
+            i && (i.textContent = t ? "Open main menu" : "Close main menu");
+          });
+      });
+    </script>
+  </body>
 </html>

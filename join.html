@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="description"
+      content="Join lab as a PhD student, MS student, intern, or visiting researcher. Information about admission requirements, application process, and opportunities at CUHK (Shenzhen)."
+    />
+    <meta
+      name="keywords"
+      content="PhD application, MS application, research internship, CUHK, graduate admission, research opportunities, HCI research, SE research"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sidong Feng" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en-US" />
+    <meta name="generator" content="Astro v5.13.5" />
+    <meta name="theme-color" content="#34495E" />
+    <meta name="msapplication-TileColor" content="#34495E" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <title>Join | Sidong Feng</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://sidongfeng.github.io/news" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//scholar.google.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
+    <link rel="dns-prefetch" href="//twitter.com" />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//dblp.org" />
+    <link rel="dns-prefetch" href="//orcid.org" />
+
+    <!-- Page Prefetch -->
+    <link rel="prefetch" href="/index.html" as="document" />
+    <link rel="prefetch" href="/publications.html" as="document" />
+
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-170043246-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-170043246-1");
+    </script>
+
+    <!-- Web Vitals via web-vitals library -->
+    <script>
+      async function loadWebVitals() {
+        const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import(
+          "https://unpkg.com/web-vitals@3/dist/web-vitals.js"
+        );
+
+        function sendToGA(metric) {
+          gtag("event", metric.name, {
+            event_category: "Core Web Vitals",
+            value: Math.round(
+              metric.name === "CLS" ? metric.value * 1000 : metric.value
+            ),
+            metric_id: metric.id,
+            metric_value: metric.value,
+            metric_delta: metric.delta,
+            custom_parameters: {
+              metric_rating: metric.rating,
+            },
+          });
+        }
+
+        getCLS(sendToGA);
+        getFID(sendToGA);
+        getFCP(sendToGA);
+        getLCP(sendToGA);
+        getTTFB(sendToGA);
+      }
+
+      if (document.readyState === "complete") {
+        loadWebVitals();
+      } else {
+        window.addEventListener("load", loadWebVitals);
+      }
+    </script>
+
+    <!-- Academic/Event Analytics -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pageType = document.body?.dataset?.pageType || "unknown";
+        const contentCategory =
+          document.body?.dataset?.contentCategory || "general";
+
+        const trackEvent = (name, params = {}) => {
+          gtag("event", name, params);
+        };
+
+        const addClickTracking = (selector, handler) => {
+          document.querySelectorAll(selector).forEach((el) => {
+            el.addEventListener("click", handler);
+          });
+        };
+
+        addClickTracking("a[data-publication-title]", function () {
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("publication_click", {
+            event_category: "Publications",
+            event_label: publicationTitle,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("a[data-material-type]", function () {
+          const materialType =
+            this.getAttribute("data-material-type") || "unknown";
+          const publicationTitle =
+            this.getAttribute("data-publication-title") || "Unknown";
+          const publicationId =
+            this.getAttribute("data-publication-id") || "";
+
+          trackEvent("material_click", {
+            event_category: "Publications",
+            event_label: `${materialType} - ${publicationTitle}`,
+            material_type: materialType,
+            publication_title: publicationTitle,
+            publication_id: publicationId,
+            page_type: pageType,
+            content_category: contentCategory,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking("[data-filter-type]", function () {
+          const filterType = this.getAttribute("data-filter-type") || "unknown";
+          const filterValue =
+            this.getAttribute("data-filter") ||
+            this.getAttribute("data-type") ||
+            "unknown";
+          const filterLabel = this.textContent?.trim() || filterValue;
+
+          trackEvent("filter_click", {
+            event_category: "Publications",
+            event_label: `${filterType}: ${filterLabel}`,
+            filter_type: filterType,
+            filter_keyword: filterValue,
+            page_type: pageType,
+            content_category: contentCategory,
+          });
+        });
+
+        function trackDeepLinkArrival() {
+          if (!window.location.hash) return;
+
+          const hash = window.location.hash.substring(1);
+          const targetElement = document.getElementById(hash);
+
+          if (targetElement && targetElement.classList.contains("paper-card")) {
+            const publicationTitle =
+              targetElement
+                .querySelector("[data-publication-title]")
+                ?.getAttribute("data-publication-title") ||
+              targetElement.querySelector("h3")?.textContent?.trim() ||
+              "Unknown";
+
+            trackEvent("deep_link_arrival", {
+              event_category: "Publications",
+              event_label: publicationTitle,
+              publication_title: publicationTitle,
+              publication_id: hash,
+              page_type: pageType,
+              content_category: contentCategory,
+              non_interaction: true,
+            });
+          }
+        }
+
+        setTimeout(trackDeepLinkArrival, 500);
+        window.addEventListener("hashchange", () => {
+          setTimeout(trackDeepLinkArrival, 100);
+        });
+
+        addClickTracking('a[href*="/files/"], a[href$=".pdf"]', function () {
+          trackEvent("file_download", {
+            event_category: "Publications",
+            event_label: this.href.split("/").pop(),
+            value: 1,
+            transport: "beacon",
+          });
+        });
+
+        addClickTracking(
+          'a[href^="http"]:not([href*="sidongfeng.github.io"])',
+          function () {
+            trackEvent("outbound_click", {
+              event_category: "External Links",
+              event_label: this.href,
+              transport: "beacon",
+            });
+          }
+        );
+
+        document
+          .querySelectorAll('a[href^="/"], a[href*="sidongfeng.github.io]')
+          .forEach((link) => {
+            if (link.href.startsWith("http") && !link.href.includes("sidongfeng.github.io")) {
+              return;
+            }
+
+            if (
+              link.hasAttribute("data-publication-title") ||
+              link.hasAttribute("data-material-type")
+            ) {
+              return;
+            }
+
+            link.addEventListener("click", function () {
+              const linkText =
+                this.textContent?.trim() ||
+                this.getAttribute("aria-label") ||
+                "unnamed";
+
+              trackEvent("internal_link_click", {
+                event_category: "Navigation",
+                event_label: `${linkText} → ${this.href}`,
+                link_text: linkText,
+                link_destination: this.href,
+                link_source_page: window.location.pathname,
+                page_type: pageType,
+                transport: "beacon",
+              });
+            });
+          });
+
+        addClickTracking("[data-share]", function () {
+          trackEvent("share", {
+            event_category: "Social",
+            event_label: this.dataset.share,
+            value: 1,
+          });
+        });
+
+        document.querySelectorAll("form").forEach((form) => {
+          form.addEventListener("submit", function () {
+            trackEvent("form_submit", {
+              event_category: "Engagement",
+              event_label: this.id || this.className || "unnamed_form",
+            });
+          });
+        });
+
+        let startTime = Date.now();
+        let engaged = false;
+        let heartbeatTimer;
+        let maxScroll = 0;
+
+        function trackEngagement() {
+          if (engaged) return;
+
+          engaged = true;
+          heartbeatTimer = setInterval(() => {
+            trackEvent("page_engagement", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              non_interaction: true,
+            });
+          }, 30000);
+        }
+
+        window.addEventListener("scroll", () => {
+          trackEngagement();
+
+          const scrollPercent = Math.round(
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+              100
+          );
+
+          if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+            maxScroll = scrollPercent;
+            trackEvent("scroll_depth", {
+              event_category: "Engagement",
+              value: scrollPercent,
+              non_interaction: true,
+            });
+          }
+        });
+
+        window.addEventListener("beforeunload", () => {
+          if (heartbeatTimer) {
+            clearInterval(heartbeatTimer);
+          }
+
+          if (engaged) {
+            trackEvent("session_time", {
+              event_category: "Engagement",
+              value: Math.round((Date.now() - startTime) / 1000),
+              transport: "beacon",
+            });
+          }
+        });
+      });
+    </script>
+
+    <!-- Error Tracking -->
+    <script>
+      window.addEventListener("error", (e) => {
+        gtag("event", "javascript_error", {
+          event_category: "Errors",
+          event_label: `${e.message} at ${e.filename}:${e.lineno}`,
+          value: 1,
+          non_interaction: true,
+        });
+      });
+
+      window.addEventListener("unhandledrejection", (e) => {
+        gtag("event", "promise_rejection", {
+          event_category: "Errors",
+          event_label: String(e.reason),
+          value: 1,
+          non_interaction: true,
+        });
+      });
+    </script>
+
+    <!-- Performance Monitor -->
+    <script>
+      class PerformanceMonitor {
+        constructor() {
+          this.metrics = {};
+          this.observers = [];
+          this.webVitals = {
+            lcp: null,
+            fid: null,
+            cls: null,
+            inp: null,
+            ttfb: null,
+            fcp: null,
+          };
+
+          this.init();
+        }
+
+        init() {
+          this.measureCoreWebVitals();
+          this.measureResourceTiming();
+          this.observeLongTasks();
+          this.observeLayoutShifts();
+          this.measurePaintTiming();
+          this.measureMemory();
+
+          window.addEventListener("load", () => {
+            setTimeout(() => this.reportMetrics(), 2000);
+          });
+        }
+
+        measureCoreWebVitals() {
+          this.observeLCP();
+          this.observeFID();
+          this.observeINP();
+          this.measureTTFB();
+        }
+
+        observeLCP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const entries = list.getEntries();
+              const lastEntry = entries[entries.length - 1];
+
+              this.webVitals.lcp = Math.round(
+                lastEntry.renderTime || lastEntry.loadTime
+              );
+              this.metrics.lcp = this.webVitals.lcp;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "LCP",
+                value: this.webVitals.lcp,
+                metric_id: "v3-" + Date.now(),
+                metric_value: this.webVitals.lcp,
+                metric_delta: this.webVitals.lcp,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("LCP", this.webVitals.lcp, {
+                good: 2500,
+                needsImprovement: 4000,
+              });
+            });
+
+            observer.observe({
+              type: "largest-contentful-paint",
+              buffered: true,
+            });
+            this.observers.push(observer);
+          } catch {
+            console.log("LCP observer not supported");
+          }
+        }
+
+        observeFID() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (this.webVitals.fid) continue;
+
+                this.webVitals.fid = Math.round(
+                  entry.processingStart - entry.startTime
+                );
+                this.metrics.fid = this.webVitals.fid;
+
+                gtag("event", "web_vitals", {
+                  event_category: "Web Vitals",
+                  event_label: "FID",
+                  value: this.webVitals.fid,
+                  metric_id: "v3-" + Date.now(),
+                  metric_value: this.webVitals.fid,
+                  metric_delta: this.webVitals.fid,
+                  non_interaction: true,
+                });
+
+                this.logVitalRating("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                });
+              }
+            });
+
+            observer.observe({ type: "first-input", buffered: true });
+            this.observers.push(observer);
+          } catch {
+            console.log("FID observer not supported");
+          }
+        }
+
+        observeINP() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let maxDuration = 0;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                const duration = entry.processingEnd
+                  ? entry.processingEnd - entry.startTime
+                  : entry.duration;
+
+                if (duration > maxDuration) {
+                  maxDuration = duration;
+                  this.webVitals.inp = Math.round(duration);
+                  this.metrics.inp = this.webVitals.inp;
+                }
+              }
+            });
+
+            observer.observe({
+              type: "event",
+              buffered: true,
+              durationThreshold: 16,
+            });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  this.webVitals.inp
+                ) {
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "INP",
+                    value: this.webVitals.inp,
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: this.webVitals.inp,
+                    metric_delta: this.webVitals.inp,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("INP", this.webVitals.inp, {
+                    good: 200,
+                    needsImprovement: 500,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("INP observer not supported");
+          }
+        }
+
+        measureTTFB() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const navigationEntries = performance.getEntriesByType("navigation");
+          if (!navigationEntries.length) return;
+
+          const navEntry = navigationEntries[0];
+          this.webVitals.ttfb = Math.round(navEntry.responseStart);
+          this.metrics.ttfb = this.webVitals.ttfb;
+
+          gtag("event", "web_vitals", {
+            event_category: "Web Vitals",
+            event_label: "TTFB",
+            value: this.webVitals.ttfb,
+            metric_id: "v3-" + Date.now(),
+            metric_value: this.webVitals.ttfb,
+            metric_delta: this.webVitals.ttfb,
+            non_interaction: true,
+          });
+
+          this.logVitalRating("TTFB", this.webVitals.ttfb, {
+            good: 800,
+            needsImprovement: 1800,
+          });
+        }
+
+        logVitalRating(name, value, thresholds) {
+          let rating = "good";
+
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          const emoji =
+            rating === "good"
+              ? "✅"
+              : rating === "needs-improvement"
+              ? "⚠️"
+              : "❌";
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.log(`${emoji} ${name}: ${value}ms (${rating})`);
+          }
+
+          return rating;
+        }
+
+        measureResourceTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const resources = performance.getEntriesByType("resource");
+          let totalSize = 0;
+          const slowResources = [];
+
+          resources.forEach((resource) => {
+            totalSize += resource.transferSize || 0;
+
+            if (resource.duration > 1000) {
+              slowResources.push({
+                name: resource.name.split("/").pop(),
+                duration: resource.duration,
+                size: resource.transferSize,
+              });
+            }
+          });
+
+          this.metrics.resourceCount = resources.length;
+          this.metrics.totalResourceSize = totalSize;
+          this.metrics.slowResources = slowResources;
+        }
+
+        observeLongTasks() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            const observer = new PerformanceObserver((list) => {
+              const longTasks = list.getEntries();
+              if (!longTasks.length) return;
+
+              this.metrics.longTasks =
+                (this.metrics.longTasks || 0) + longTasks.length;
+
+              longTasks.forEach((task) => {
+                gtag("event", "long_task", {
+                  event_category: "Performance",
+                  value: Math.round(task.duration),
+                  non_interaction: true,
+                  custom_parameters: {
+                    task_duration: task.duration,
+                    task_start: task.startTime,
+                  },
+                });
+              });
+            });
+
+            observer.observe({ entryTypes: ["longtask"] });
+            this.observers.push(observer);
+          } catch {
+            console.log("Long task observer not supported");
+          }
+        }
+
+        observeLayoutShifts() {
+          if (!("PerformanceObserver" in window)) return;
+
+          try {
+            let clsValue = 0;
+            let reportedToCWV = false;
+
+            const observer = new PerformanceObserver((list) => {
+              for (const entry of list.getEntries()) {
+                if (!entry.hadRecentInput) {
+                  clsValue += entry.value;
+                }
+              }
+
+              this.webVitals.cls = clsValue;
+              this.metrics.cumulativeLayoutShift = clsValue;
+            });
+
+            observer.observe({ entryTypes: ["layout-shift"] });
+            this.observers.push(observer);
+
+            addEventListener(
+              "visibilitychange",
+              () => {
+                if (
+                  document.visibilityState === "hidden" &&
+                  !reportedToCWV &&
+                  clsValue > 0
+                ) {
+                  reportedToCWV = true;
+
+                  gtag("event", "web_vitals", {
+                    event_category: "Web Vitals",
+                    event_label: "CLS",
+                    value: Math.round(clsValue * 1000),
+                    metric_id: "v3-" + Date.now(),
+                    metric_value: clsValue,
+                    metric_delta: clsValue,
+                    non_interaction: true,
+                  });
+
+                  this.logVitalRating("CLS", clsValue, {
+                    good: 0.1,
+                    needsImprovement: 0.25,
+                  });
+                }
+              },
+              { once: true }
+            );
+          } catch {
+            console.log("Layout shift observer not supported");
+          }
+        }
+
+        measurePaintTiming() {
+          if (!("performance" in window) || !("getEntriesByType" in performance)) {
+            return;
+          }
+
+          const paintEntries = performance.getEntriesByType("paint");
+
+          paintEntries.forEach((entry) => {
+            const value = Math.round(entry.startTime);
+            this.metrics[entry.name.replace("-", "_")] = value;
+
+            if (entry.name === "first-contentful-paint") {
+              this.webVitals.fcp = value;
+
+              gtag("event", "web_vitals", {
+                event_category: "Web Vitals",
+                event_label: "FCP",
+                value,
+                metric_id: "v3-" + Date.now(),
+                metric_value: value,
+                metric_delta: value,
+                non_interaction: true,
+              });
+
+              this.logVitalRating("FCP", value, {
+                good: 1800,
+                needsImprovement: 3000,
+              });
+            }
+          });
+        }
+
+        measureMemory() {
+          if (!("memory" in performance)) return;
+
+          this.metrics.memoryUsage = {
+            used: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024),
+            total: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024),
+            limit: Math.round(performance.memory.jsHeapSizeLimit / 1024 / 1024),
+          };
+        }
+
+        reportMetrics() {
+          if ("performance" in window && performance.timing) {
+            const timing = performance.timing;
+            this.metrics.pageLoadTime =
+              timing.loadEventEnd - timing.navigationStart;
+            this.metrics.domReadyTime =
+              timing.domContentLoadedEventEnd - timing.navigationStart;
+          }
+
+          gtag("event", "performance_metrics", {
+            event_category: "Performance",
+            custom_parameters: {
+              page_load_time: this.metrics.pageLoadTime,
+              dom_ready_time: this.metrics.domReadyTime,
+              resource_count: this.metrics.resourceCount,
+              total_size: Math.round(
+                (this.metrics.totalResourceSize || 0) / 1024
+              ),
+              long_tasks: this.metrics.longTasks || 0,
+              first_paint: this.metrics.first_paint,
+              first_contentful_paint: this.metrics.first_contentful_paint,
+              memory_used: this.metrics.memoryUsage?.used,
+            },
+            non_interaction: true,
+          });
+
+          this.checkPerformanceBudget();
+
+          if (
+            window.location.hostname === "localhost" ||
+            window.location.hostname.includes("dev")
+          ) {
+            console.group("🚀 Performance Metrics");
+
+            console.group("📊 Core Web Vitals");
+            console.table({
+              "LCP (Largest Contentful Paint)": {
+                value: this.webVitals.lcp
+                  ? `${this.webVitals.lcp}ms`
+                  : "Not measured",
+                target: "< 2500ms (good), < 4000ms (needs improvement)",
+                status: this.getRatingEmoji("LCP", this.webVitals.lcp, {
+                  good: 2500,
+                  needsImprovement: 4000,
+                }),
+              },
+              "FID (First Input Delay)": {
+                value: this.webVitals.fid
+                  ? `${this.webVitals.fid}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 100ms (good), < 300ms (needs improvement)",
+                status: this.getRatingEmoji("FID", this.webVitals.fid, {
+                  good: 100,
+                  needsImprovement: 300,
+                }),
+              },
+              "CLS (Cumulative Layout Shift)": {
+                value:
+                  this.webVitals.cls !== null
+                    ? this.webVitals.cls.toFixed(3)
+                    : "Not measured",
+                target: "< 0.1 (good), < 0.25 (needs improvement)",
+                status: this.getRatingEmoji("CLS", this.webVitals.cls, {
+                  good: 0.1,
+                  needsImprovement: 0.25,
+                }),
+              },
+              "INP (Interaction to Next Paint)": {
+                value: this.webVitals.inp
+                  ? `${this.webVitals.inp}ms`
+                  : "Not measured (requires interaction)",
+                target: "< 200ms (good), < 500ms (needs improvement)",
+                status: this.getRatingEmoji("INP", this.webVitals.inp, {
+                  good: 200,
+                  needsImprovement: 500,
+                }),
+              },
+              "FCP (First Contentful Paint)": {
+                value: this.webVitals.fcp
+                  ? `${this.webVitals.fcp}ms`
+                  : "Not measured",
+                target: "< 1800ms (good), < 3000ms (needs improvement)",
+                status: this.getRatingEmoji("FCP", this.webVitals.fcp, {
+                  good: 1800,
+                  needsImprovement: 3000,
+                }),
+              },
+              "TTFB (Time to First Byte)": {
+                value: this.webVitals.ttfb
+                  ? `${this.webVitals.ttfb}ms`
+                  : "Not measured",
+                target: "< 800ms (good), < 1800ms (needs improvement)",
+                status: this.getRatingEmoji("TTFB", this.webVitals.ttfb, {
+                  good: 800,
+                  needsImprovement: 1800,
+                }),
+              },
+            });
+            console.groupEnd();
+
+            console.group("⚙️ Other Metrics");
+            console.table(this.metrics);
+            console.groupEnd();
+
+            console.groupEnd();
+          }
+        }
+
+        getRatingEmoji(name, value, thresholds) {
+          if (value === null || value === undefined) return "⏳";
+
+          let rating = "good";
+          if (value > thresholds.needsImprovement) {
+            rating = "poor";
+          } else if (value > thresholds.good) {
+            rating = "needs-improvement";
+          }
+
+          return rating === "good"
+            ? "✅ Good"
+            : rating === "needs-improvement"
+            ? "⚠️ Needs improvement"
+            : "❌ Poor";
+        }
+
+        checkPerformanceBudget() {
+          const budgets = {
+            lcp: 2500,
+            fcp: 1800,
+            cls: 0.1,
+            fid: 100,
+            inp: 200,
+            ttfb: 800,
+            pageLoadTime: 3000,
+            domReadyTime: 1500,
+            totalResourceSize: 2097152,
+            longTasks: 3,
+            first_contentful_paint: 1800,
+          };
+
+          const violations = [];
+          const warnings = [];
+
+          Object.entries(this.webVitals).forEach(([metric, value]) => {
+            if (
+              value !== null &&
+              value !== undefined &&
+              Object.prototype.hasOwnProperty.call(budgets, metric) &&
+              value > budgets[metric]
+            ) {
+              violations.push({
+                metric: metric.toUpperCase(),
+                value: metric === "cls" ? value.toFixed(3) : `${value}ms`,
+                budget:
+                  metric === "cls"
+                    ? budgets[metric].toFixed(3)
+                    : `${budgets[metric]}ms`,
+                type: "Core Web Vital",
+              });
+            }
+          });
+
+          Object.entries(budgets).forEach(([metric, budget]) => {
+            if (Object.prototype.hasOwnProperty.call(this.webVitals, metric)) {
+              return;
+            }
+
+            const value = this.metrics[metric];
+            if (value && value > budget) {
+              warnings.push({
+                metric,
+                value,
+                budget,
+                type: "Performance",
+              });
+            }
+          });
+
+          if (violations.length > 0) {
+            gtag("event", "core_web_vitals_violation", {
+              event_category: "Performance",
+              event_label: violations.map((v) => v.metric).join(","),
+              value: violations.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Core Web Vitals budget violations:");
+              console.table(violations);
+            }
+          }
+
+          if (warnings.length > 0) {
+            gtag("event", "performance_budget_violation", {
+              event_category: "Performance",
+              event_label: warnings.map((v) => v.metric).join(","),
+              value: warnings.length,
+              non_interaction: true,
+            });
+
+            if (
+              window.location.hostname === "localhost" ||
+              window.location.hostname.includes("dev")
+            ) {
+              console.warn("⚠️ Performance budget warnings:");
+              console.table(warnings);
+            }
+          }
+
+          return { violations, warnings };
+        }
+
+        cleanup() {
+          this.observers.forEach((observer) => observer.disconnect());
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        window.performanceMonitor = new PerformanceMonitor();
+      });
+
+      window.addEventListener("beforeunload", () => {
+        if (window.performanceMonitor) {
+          window.performanceMonitor.cleanup();
+        }
+      });
+    </script>
+  </head>
+   
+  <body
+  class="bg-white text-gray-900"
+  data-page-type="join"
+  data-content-category="website"
+>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <a
+              href="index.html"
+              class="text-xl font-bold logo-link"
+              style="color: var(--color-primary);"
+            >
+              Sidong Feng
+            </a>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="index.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Home
+              </a>
+              <a
+                href="news.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                News
+              </a>
+              <a
+                href="publications.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Publications
+              </a>
+              <a
+                href="students.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Students
+              </a>
+              <a
+                href="join.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-active"
+              >
+                Join Us
+              </a>
+              <!-- <a
+                href="media.html"
+                class="px-3 py-2 text-sm font-medium transition-colors nav-link"
+              >
+                Media
+              </a> -->
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="mobile-menu-btn p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
+        >
+          <a href="index.html" class="block px-3 py-2 text-base font-medium nav-link">
+            Home
+          </a>
+          <a
+            href="news.html"
+            class="block px-3 py-2 text-base font-medium nav-link"
+          >
+            News
+          </a>
+          <a
+            href="publications.html"
+            class="block px-3 py-2 text-base font-medium nav-link"
+          >
+            Publications
+          </a>
+          <a
+            href="students.html"
+            class="block px-3 py-2 text-base font-medium nav-link"
+          >
+            Students
+          </a>
+          <a
+            href="join.html"
+            class="block px-3 py-2 text-base font-medium nav-active"
+          >
+            Join Us
+          </a>
+          <!-- <a href="media.html" class="block px-3 py-2 text-base font-medium nav-link">
+            Media
+          </a> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-1" id="main-content">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav" data-astro-cid-qaanghzh>
+          <ol class="breadcrumb" data-astro-cid-qaanghzh>
+            <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+              <a
+                href="index.html"
+                class="breadcrumb-link"
+                data-astro-cid-qaanghzh
+              >
+                Home
+              </a>
+              <span
+                class="breadcrumb-separator"
+                aria-hidden="true"
+                data-astro-cid-qaanghzh
+              >
+                /
+              </span>
+            </li>
+            <li class="breadcrumb-item" data-astro-cid-qaanghzh>
+              <span
+                class="breadcrumb-current"
+                aria-current="page"
+                data-astro-cid-qaanghzh
+              >
+                Join Us
+              </span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 pt-4 pb-8 sm:px-6 lg:px-8">
+        <div class="page-header">
+          <h1 class="page-title mb-2">Joining Lab</h1>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <p class="text-blue-900">
+              Our lab has multiple openings for the upcoming term&mdash;please check the available positions below.
+              <!-- If you're interested in working with me, please read below and
+                send me an email (sidongfeng [at] cuhk.edu.cn). -->
+            </p>
+          </div>
+
+          <!-- <div class="bg-yellow-50 border-2 border-yellow-500 rounded-lg p-4 mb-6">
+            <h3 class="font-semibold text-yellow-900 mb-2">Openings</h3>
+            <p class="text-yellow-800">
+              Our lab has multiple openings for the upcoming term&mdash;please check the available positions below.
+            </p>
+          </div> -->
+
+          <!-- Table of Contents -->
+          <div class="bg-gray-50 rounded-lg p-6 mb-8">
+            <h2 class="text-lg font-semibold text-text mb-4">Quick Navigation</h2>
+            <nav class="flex flex-wrap gap-3">
+              <a
+                href="#postdoc"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Postdoc Researcher
+              </a>
+              <a
+                href="#phd"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Ph.D. Student
+              </a>
+              <a
+                href="#ms"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                M.S. Student
+              </a>
+              <a
+                href="#visiting"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Intern
+              </a>
+              <a
+                href="#visiting"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Visiting Student
+              </a>
+              <a
+                href="#visiting"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Undergraduate Student
+              </a>
+              <a
+                href="#ra"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+                Research Assistant
+              </a>
+              <a
+                href="#admin_process"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+              Application Process
+              </a>
+              <a
+                href="#faq"
+                class="px-4 py-2 bg-white border border-gray-300 rounded-md text-link hover:border-accent hover:bg-accent/5 transition-colors font-medium"
+              >
+              FAQ
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="space-y-12">
+          <!-- Postdoc -->
+          <section id="postdoc">
+            <h2 class="section-header">Postdoc Researcher</h2>
+            <div class="prose max-w-none text-text space-y-4">
+              <p>I welcome inquiries about a postdoctoral researcher position.</p>
+              <p>
+                There is no institution-wide deadline for postdoc positions. If
+                you're interested, please contact me directly.
+              </p>
+            </div>
+          </section>
+
+          <!-- Ph.D. Student -->
+          <section id="phd">
+            <h2 class="section-header">Ph.D. Student</h2>
+            <div class="prose max-w-none text-text space-y-4">
+              <p>
+                I only accept highly self-motivated Ph.D. students who have prior 
+                research experience, preferably those who have previously worked 
+                with me. Preferred qualifications (with university admission requirements met) include:
+              </p>
+              <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>
+                    <strong>Highly self-motivated, easy to communicate, passionate 
+                    about research, and capable of independent thinking.</strong>
+                  </li>
+                  <li>
+                    <strong>Interested in AI/LLM, SE, and HCI</strong>, with a solid 
+                    theoretical foundation.
+                  </li>
+                  <li>
+                    Has a strong ability to <strong>translate concepts into practical code</strong>.
+                    <strong>Industry experience</strong> is a plus.
+                  </li>
+                  <li>
+                    Strong <strong>English reading, writing, and communication</strong> skills.
+                    The university requires a minimum language proficiency of IELTS 6.5 or TOEFL 80.
+                  </li>  
+                  <li>
+                    GPA ranking in the <strong>top 30% of a 985 university</strong> or 
+                    <strong>top 10% of a 211 university</strong> (or equivalent institutions).
+                  </li>
+                  <li>
+                    Or, <strong>first-author publication</strong> in a top-tier journal or conference (CCF-A).
+                  </li>
+                  <li>
+                    Or, other <strong>prestigious awards</strong> with significant recognition (such as competition award).
+                  </li>
+                </ul>
+              </div>
+              <p>
+                Please refer to the 
+                <a
+                href="#admin_process"
+                class="text-link hover:text-link-hover"
+                >
+                  Application Process
+                </a>
+                and
+                <a
+                href="#faq"
+                class="text-link hover:text-link-hover"
+                >
+                  FAQs
+                </a>
+                for more details on how to apply and to find answers to common questions.
+              </p>
+              <p>
+                If these conditions are not met, consider interning with me or
+                applying as a M.S. student first.
+              </p>
+              
+            </div>
+          </section>
+
+          <!-- M.S. Student -->
+          <section id="ms">
+            <h2 class="section-header">M.S. Student</h2>
+            <div class="prose max-w-none text-text space-y-4">
+              <p>
+                For Master's students, I don't have a strict requirement for
+                prior research experience working with me, but it significantly
+                increases the chances of admission. Preferred qualifications 
+                (with university admission requirements met) include:
+              </p>
+              <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>
+                    <strong>Highly self-motivated, easy to communicate, passionate 
+                    about research, and capable of independent thinking.</strong>
+                  </li>
+                  <li>
+                    <strong>Interested in AI/LLM, SE, and HCI</strong>, with a solid 
+                    theoretical foundation.
+                  </li>
+                  <li>
+                    Has a strong ability to <strong>translate concepts into practical code</strong>.
+                    <strong>Industry experience</strong> is a plus.
+                  </li>
+                  <li>
+                    Strong <strong>English reading, writing, and communication</strong> skills.
+                    The university requires a minimum language proficiency of IELTS 6.5 or TOEFL 80.
+                  </li>  
+                  <li>
+                    GPA ranking in the <strong>top 985 university</strong> or 
+                    <strong>top 30% of a 211 university</strong> (or equivalent institutions).
+                  </li>
+                  <li>
+                    Or, <strong>first-author publication</strong> in a top-tier journal or conference (CCF-A).
+                  </li>
+                  <li>
+                    Or, other <strong>prestigious awards</strong> with significant recognition (such as competition award).
+                  </li>
+                </ul>
+              </div>
+              <p>
+                Please refer to the 
+                <a
+                href="#admin_process"
+                class="text-link hover:text-link-hover"
+                >
+                  Application Process
+                </a>
+                and
+                <a
+                href="#faq"
+                class="text-link hover:text-link-hover"
+                >
+                  FAQs
+                </a>
+                for more details on how to apply and to find answers to common questions.
+              </p>
+              <p>
+                If these conditions are not met, consider interning with me first.
+              </p>
+            </div>
+          </section>
+
+          <!-- Visiting & Internship -->
+          <section id="visiting">
+            <h2 class="section-header">Intern / Visiting / Undergraduate Students</h2>
+            <div class="prose max-w-none text-text space-y-4">
+              <p>
+                I welcome full-time internship, visiting researchers from other institutions,
+                and motivated undergraduate students, as long as (1) the period is at
+                least 3 months long, and (2) there's a good research fit.
+              </p>
+              <p>
+                Please refer to the 
+                <a
+                href="#admin_process"
+                class="text-link hover:text-link-hover"
+                >
+                  Application Process
+                </a>
+                and
+                <a
+                href="#faq"
+                class="text-link hover:text-link-hover"
+                >
+                  FAQs
+                </a>
+                for more details on how to apply and to find answers to common questions.
+              </p>
+            </div>
+          </section>
+
+          <!-- RA -->
+          <section id="ra">
+            <h2 class="section-header">Research Assistant (RA)</h2>
+            <div class="prose max-w-none text-text space-y-4">
+              <p>
+                I am seeking full-time / part-time research assistant from CUHK (Shenzhen) 
+                or other institutions. 
+              </p>
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-semibold text-text mb-2">Key Duties and Responsibilities</h4>
+                  <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                    <ul class="list-disc pl-5 space-y-1">
+                      <li>
+                        Design, develop, and evaluate prototypes for human-AI collaboration in software development
+                      </li>
+                      <li>
+                        Conduct literature reviews and help synthesise the state of the art
+                      </li>
+                      <li>
+                        Support the preparation and execution of user studies and empirical evaluations
+                      </li>
+                      <li>
+                        Analyse qualitative and quantitative data from experiments and developer interactions
+                      </li>
+                      <li>
+                        Contribute to scientific publications at top-tier venues
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-text mb-2">Qualifications and Requirements:</h4>
+                  <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                    <ul class="list-disc pl-5 space-y-1">
+                      <li>
+                        A degree in Computer Science, Software Engineering, Information Systems, or related field (Master’s degree preferred).
+                      </li>
+                      <li>
+                        Programming: Strong software engineering skills; proficiency in Python and/or TypeScript; experience building non-trivial software projects
+                      </li>
+                      <li>
+                        AI Tools: Hands-on experience with current AI-assisted development tools (e.g., GitHub Copilot, Cursor, Claude Code, Codex) and/or LLM APIs (OpenAI, Anthropic, Gemini, etc.)
+                      </li>
+                      <li>
+                        HCI Methods (plus): Familiarity with user study design, qualitative analysis, or UX evaluation methods is a strong advantage
+                      </li>
+                      <li>
+                        Research Interest: Curiosity about Software Engineering and Human-Computer INteraction; willingness to engage with academic literature
+                      </li>
+                      <li>
+                        Language: Proficient in English (written and spoken)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Please refer to the 
+                <a
+                href="#admin_process"
+                class="text-link hover:text-link-hover"
+                >
+                  Application Process
+                </a>
+                and
+                <a
+                href="#faq"
+                class="text-link hover:text-link-hover"
+                >
+                  FAQs
+                </a>
+                for more details on how to apply and to find answers to common questions.
+              </p>
+            </div>
+          </section>
+
+          <!-- Admissions Process -->
+          <section id="admin_process" class="border-t pt-8">
+            <h2 class="section-header">Application Process</h2>
+
+            <p class="mb-6 text-text">
+              Here is how I recruit and admit incoming position in our lab:
+            </p>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold text-text mb-2">By Applying</h4>
+                <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                  <p>
+                    The applicant first emails me (
+                      <a href="mailto:sidongfeng@cuhk.edu.cn" class="social-link">sidongfeng [at] cuhk.edu.cn</a>
+                    )with the subject line 
+                    <strong>"[Type of Application] + [Name]"</strong> 
+                    and include the following information in the content
+                    (Chinese is fine, English is preferred):
+                  </p>
+
+                  <ol class="list-decimal pl-5 space-y-1">
+                    <li>
+                      Briefly introduce yourself and any background or experience 
+                      in SE or HCI or AI (e.g., coursework, research, projects)? 
+                    </li>
+                    <li>
+                      Why are you interested in doing research?
+                    </li>
+                    <li>
+                      <strong><i>[Not required for RA]</i></strong> Why are you interested in our lab?
+                    </li>
+                    <li>
+                      <strong><i>[Not required for RA]</i></strong> Are there particular areas of interest you have in SE, HCI, or AI?
+                      I'm looking for interests, experiences, and problems you
+                      care about.
+                    </li>
+                  </ol>
+
+                  <p class="text-text mt-4 mb-2">
+                    Please also attach the following documents:
+                  </p>
+
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>
+                      <strong>CV</strong> and <strong>transcript</strong> (B.S. & M.S.).
+                    </li>
+                    <li>
+                      <strong><i>[Highly Recommended for Ph.D. and M.S.]</i></strong>
+                      <strong>1/2-pages statement of purpose written in English</strong>.
+                      This is the most important component that highlights your
+                      research direction and interest in a logical and
+                      convincing manner. Your answers to (1)-(4) could be brief
+                      if there's a significant overlap with the statement.
+                    </li>
+                    <li>
+                      <strong>Copies of qualification documents</strong>.
+                      Representative publications, awards, patents, or links to popular
+                      open-source projects that demonstrate your qualifications and research potential.
+                    </li>
+                  </ul>
+
+                  <p class="text-text mt-4 mb-2">
+                    Feel free to follow up with me in two or three weeks if you haven't heard back, 
+                    as I may be busy with other commitments.
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <h4 class="font-semibold text-text mb-2">By Interview</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  For applicants who pass the document review round, I will invite you 
+                  to a <strong>1-hour</strong> one-on-one meeting. Please prepare a 
+                  15–20 minute self-introduction, followed by a Q&A session to help me 
+                  better understand your background, motivation, and interests.
+                </p>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  Unfortunately, due to the high volume of applications and limited availability, 
+                  I may not be able to provide individual feedback to applicants who are not invited
+                  for an interview. Feel free to apply again in the future when you have more research
+                  experience or a clearer research direction. I am willing to review your application again.
+                </p>
+              </div>
+
+              <!-- <div>
+                <h4 class="font-semibold text-text mb-2">By Additional Evaluation (Optional)</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  For those who pass the first round, I may invite you to an additional 
+                  round of <strong>30-minutes</strong> meeting to discuss potential research ideas.
+                </p>
+              </div> -->
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">By Decision</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  You will receive an email with the decision and next steps if admitted.
+                  For Ph.D. and M.S. students, an additional application to the university 
+                  is required, and the admission decision is made by the university. For RA, 
+                  interns, and visiting students, the decision is made by me directly.
+                </p>
+              </div>
+
+              <!-- <div>
+                <h4 class="font-semibold text-text mb-2">By Enrollment</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  You will receive an email with the final decision. If admitted, you will
+                  apply the position through the 
+                  <a
+                  href="https://sds.cuhk.edu.cn/en/phd-programmes"
+                  class="text-link hover:text-link-hover"
+                  >
+                    university's official website
+                  </a>.
+                </p>
+              </div> -->
+
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section id="faq" class="border-t pt-8">
+            <h2 class="section-header">FAQ</h2>
+
+            <p class="mb-6 text-text">
+              Common questions about the stipends, internships, duration, etc. are answered below.
+            </p>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold text-text mb-2">What are the scholarship, living stipend, allowance, or salary for the position? </h4>
+                <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>
+                      <strong>Ph.D. students</strong>: The university offers a full scholarship that covers tuition and provides 
+                      stipend (RMB 54,000 per year [
+                      <a
+                      href="https://sds.cuhk.edu.cn/en/phd-programmes"
+                      target="_blank"
+                      class="text-link hover:text-link-hover"
+                      >
+                        official website
+                      </a>
+                      ]). The stipend is sufficient to cover living expenses in Shenzhen.
+                    </li>
+                    <li>
+                      <strong>M.S. students</strong>: This program is <strong>self-funded</strong>, including an annual tuition fee of RMB 140,000
+                      [
+                      <a
+                      href="https://sds.cuhk.edu.cn/en/phd-programmes"
+                      target="_blank"
+                      class="text-link hover:text-link-hover"
+                      >
+                        official website
+                      </a>
+                      ]. However, outstanding research contributions will be rewarded. 
+                    </li>
+                    <li>
+                      <strong>Intern / Visiting / Undergraduate students</strong>: This program 
+                      is <strong>unpaid</strong>. However, outstanding research contributions will be rewarded. 
+                    </li>
+                    <li>
+                      <strong>RA</strong>: Salary will be competitive and commensurate with qualifications and experience.
+                       Appointments will be made under the establishment of CUHK(Shenzhen), and statutory benefits will be 
+                       provided in accordance with prevailing labor laws. 
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">What is the expected graduation timeline or contract duration for the position?</h4>
+                <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>
+                      <strong>Ph.D. students</strong>: average 4-5 years [
+                      <a
+                      href="https://sds.cuhk.edu.cn/en/phd-programmes"
+                      target="_blank"
+                      class="text-link hover:text-link-hover"
+                      >
+                        official website
+                      </a>
+                      ]
+                    </li>
+                    <li>
+                      <strong>M.S. students</strong>: 2 years
+                      [
+                      <a
+                      href="https://sds.cuhk.edu.cn/en/phd-programmes"
+                      target="_blank"
+                      class="text-link hover:text-link-hover"
+                      >
+                        official website
+                      </a>
+                      ]
+                    </li>
+                    <li>
+                      <strong>Intern / Visiting / Undergraduate students</strong>: 
+                      There is no fixed duration, but it should be <strong>at least three months</strong>.
+                    </li>
+                    <li>
+                      <strong>RA</strong>: It is flexible and can be negotiated.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">Does the lab allow internships?</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  Yes, I encourage internships that align with your research interests, and I will help connect you with 
+                  suitable industry if you demonstrate strong research capabilities.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">Does the lab support academic visits and exchanges?</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  Yes, I encourage you to visit top universities and laboratories. If you demonstrate strong research 
+                  capabilities, I will be happy to provide recommendations and support for your visits.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">Will attendance be monitored? What is the lab environment like?</h4>
+                <div class="text-text space-y-2 pl-4 border-l-2 border-gray-200">
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>
+                      <strong>Ph.D., M.S., Intern, Visiting, and Undergraduate:</strong>
+                      No, I do not monitor attendance. In my view, attendance does not equate to high
+                      research quality. You should find the approach that works best for your research.
+                      Ultimately, research should be self-motivated and driven by personal responsibility
+                      for your future career. My role is to mentor and help you build a successful path.
+                    </li>
+                    <li>
+                      <strong>RA:</strong>
+                      I can offer some flexibility regarding attendance, but as this is a paid position, 
+                      regular attendance is expected.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-text mb-2">What is the start date for the RA position, and where will it be based?</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  The start date can be as soon as possible or by mutual agreement. The position
+                   will be based at the CUHK campus in Shenzhen.
+                </p>
+              </div>
+
+              
+
+              <!-- <div>
+                <h4 class="font-semibold text-text mb-2">Teaching requirement</h4>
+                <p class="text-text pl-4 border-l-2 border-gray-200">
+                  xx
+                </p>
+              </div> -->
+
+              
+
+            </div>
+          </section>
+          
+
+          <!-- Previous Internship Calls -->
+          <!-- <section>
+            <h3 class="text-xl font-semibold text-text mb-3">
+              Previous Internship Calls
+            </h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <a
+                href="/2026-winter-internship-call"
+                class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition-colors"
+              >
+                2026 Winter
+              </a>
+            </div>
+          </section> -->
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="text-center text-sm text-gray-600">
+          <p>
+            &copy; 2026 Sidong Feng. Built with
+            <a href="https://astro.build">Astro</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module">
+    (async () => {
+      try {
+        if (!("serviceWorker" in navigator)) return;
+
+        const registrations = await navigator.serviceWorker.getRegistrations();
+
+        if (registrations.length) {
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+        }
+
+        if ("caches" in window) {
+          const cacheKeys = await caches.keys();
+          await Promise.all(cacheKeys.map((key) => caches.delete(key)));
+        }
+
+        if (!sessionStorage.getItem("sw-cleanup-done")) {
+          sessionStorage.setItem("sw-cleanup-done", "1");
+          location.reload();
+        }
+      } catch {
+        // no-op
+      }
+    })();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.querySelector(".mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (!menuButton || !mobileMenu) return;
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+
+        mobileMenu.classList.toggle("hidden");
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+
+        const srOnly = menuButton.querySelector(".sr-only");
+        if (srOnly) {
+          srOnly.textContent = isOpen ? "Open main menu" : "Close main menu";
+        }
+      });
+    });
+  </script>
+</body>
